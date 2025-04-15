@@ -49,18 +49,77 @@ struct CalculatorView: View {
                         .clipShape(.circle)
                 }
             }
-            Button {
-                currentNumber += "1"
-                answer = currentNumber
-            } label: {
-                Text("4")
-                    .foregroundStyle(.black)
-                    .font(.largeTitle)
-                    .frame(width: 60, height: 60)
-                    .background(.orange)
-                    .clipShape(.circle)
+            HStack {
+                Button {
+                    currentNumber += "1"
+                    answer = currentNumber
+                } label: {
+                    Text("4")
+                        .foregroundStyle(.black)
+                        .font(.largeTitle)
+                        .frame(width: 60, height: 60)
+                        .background(.orange)
+                        .clipShape(.circle)
+                }
+                Button {
+                    currentNumber += "5"
+                    answer = currentNumber
+                } label: {
+                    Text("5")
+                        .foregroundStyle(.black)
+                        .font(.largeTitle)
+                        .frame(width: 60, height: 60)
+                        .background(.orange)
+                        .clipShape(.circle)
+                }
+                Button {
+                    currentNumber += "6"
+                    answer = currentNumber
+                } label: {
+                    Text("6")
+                        .foregroundStyle(.black)
+                        .font(.largeTitle)
+                        .frame(width: 60, height: 60)
+                        .background(.orange)
+                        .clipShape(.circle)
+                }
             }
-
+            HStack {
+                Button {
+                    currentNumber += "7"
+                    answer = currentNumber
+                } label: {
+                    Text("7")
+                        .foregroundStyle(.black)
+                        .font(.largeTitle)
+                        .frame(width: 60, height: 60)
+                        .background(.orange)
+                        .clipShape(.circle)
+                }
+                Button {
+                    currentNumber += "8"
+                    answer = currentNumber
+                } label: {
+                    Text("8")
+                        .foregroundStyle(.black)
+                        .font(.largeTitle)
+                        .frame(width: 60, height: 60)
+                        .background(.orange)
+                        .clipShape(.circle)
+                }
+                Button {
+                    currentNumber += "9"
+                    answer = currentNumber
+                } label: {
+                    Text("9")
+                        .foregroundStyle(.black)
+                        .font(.largeTitle)
+                        .frame(width: 60, height: 60)
+                        .background(.orange)
+                        .clipShape(.circle)
+                }
+            }
         }
     }
 }
+
