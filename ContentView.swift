@@ -4,17 +4,19 @@ struct ContentView: View {
     var body: some View {
         
         VStack{
-            Text("Calulator")
+            Text("Calculator")
                 .font(.largeTitle)
             NavigationStack {
                 NavigationLink("Go to Calculator"){
                     CalculatorView()
                 }
+                .font(.largeTitle)
                 .padding(50)
                 NavigationLink("Go to Graphing") {
                     graphingEquationsView()
                     
                 }
+                .font(.largeTitle)
             }
             
         }
