@@ -8,9 +8,20 @@ struct CalculatorView: View {
     @State var answer = ""
     @State var previousanswer = ""
     var body: some View {
-        HStack {
-            
+        VStack {
             Text(test)
+                .frame(width: 400, height: 50)
+                .background(.gray)
+                .clipShape(Rectangle())
+            
+            Button {
+                currentNumber += "1"
+                answer = currentNumber
+            } label: {
+                Text("1")
+                    .foregroundStyle(.black)
+            }
+
         }
     }
 }
