@@ -10,6 +10,11 @@ struct ContentView: View {
                 NavigationLink("Go to Calculator"){
                     CalculatorView()
                 }
+                .padding(50)
+                NavigationLink("Go to Graphing") {
+                    graphingEquationsView()
+                    
+                }
             }
             
         }
