@@ -20,10 +20,10 @@ struct CalculatorView: View {
                     answer = currentNumber
                 } label: {
                     Text("1")
-                        .foregroundStyle(.black)
+                        .foregroundStyle(.blue)
                         .font(.largeTitle)
                         .frame(width: 60, height: 60)
-                        .background(.orange)
+                        .background(.black)
                         .clipShape(.circle)
                 }
                 Button {
@@ -31,10 +31,10 @@ struct CalculatorView: View {
                     answer = currentNumber
                 } label: {
                     Text("2")
-                        .foregroundStyle(.black)
+                        .foregroundStyle(.blue)
                         .font(.largeTitle)
                         .frame(width: 60, height: 60)
-                        .background(.orange)
+                        .background(.black)
                         .clipShape(.circle)
                 }
                 Button {
@@ -42,23 +42,24 @@ struct CalculatorView: View {
                     answer = currentNumber
                 } label: {
                     Text("3")
-                        .foregroundStyle(.black)
+                        .foregroundStyle(.blue)
                         .font(.largeTitle)
                         .frame(width: 60, height: 60)
-                        .background(.orange)
+                        .background(.black)
                         .clipShape(.circle)
                 }
+                
             }
             HStack {
                 Button {
-                    currentNumber += "1"
+                    currentNumber += "4"
                     answer = currentNumber
                 } label: {
                     Text("4")
-                        .foregroundStyle(.black)
+                        .foregroundStyle(.blue)
                         .font(.largeTitle)
                         .frame(width: 60, height: 60)
-                        .background(.orange)
+                        .background(.black)
                         .clipShape(.circle)
                 }
                 Button {
@@ -66,10 +67,10 @@ struct CalculatorView: View {
                     answer = currentNumber
                 } label: {
                     Text("5")
-                        .foregroundStyle(.black)
+                        .foregroundStyle(.blue)
                         .font(.largeTitle)
                         .frame(width: 60, height: 60)
-                        .background(.orange)
+                        .background(.black)
                         .clipShape(.circle)
                 }
                 Button {
@@ -77,10 +78,10 @@ struct CalculatorView: View {
                     answer = currentNumber
                 } label: {
                     Text("6")
-                        .foregroundStyle(.black)
+                        .foregroundStyle(.blue)
                         .font(.largeTitle)
                         .frame(width: 60, height: 60)
-                        .background(.orange)
+                        .background(.black)
                         .clipShape(.circle)
                 }
             }
@@ -90,10 +91,10 @@ struct CalculatorView: View {
                     answer = currentNumber
                 } label: {
                     Text("7")
-                        .foregroundStyle(.black)
+                        .foregroundStyle(.blue)
                         .font(.largeTitle)
                         .frame(width: 60, height: 60)
-                        .background(.orange)
+                        .background(.black)
                         .clipShape(.circle)
                 }
                 Button {
@@ -101,10 +102,10 @@ struct CalculatorView: View {
                     answer = currentNumber
                 } label: {
                     Text("8")
-                        .foregroundStyle(.black)
+                        .foregroundStyle(.blue)
                         .font(.largeTitle)
                         .frame(width: 60, height: 60)
-                        .background(.orange)
+                        .background(.black)
                         .clipShape(.circle)
                 }
                 Button {
@@ -112,10 +113,60 @@ struct CalculatorView: View {
                     answer = currentNumber
                 } label: {
                     Text("9")
+                        .foregroundStyle(.blue)
+                        .font(.largeTitle)
+                        .frame(width: 60, height: 60)
+                        .background(.black)
+                        .clipShape(.circle)
+                }
+            }
+            HStack{
+                Button {
+                    previousNumber = currentNumber
+                    currentNumber = ""
+                    operation = "+"
+                } label: {
+                    Text("+")
                         .foregroundStyle(.black)
                         .font(.largeTitle)
                         .frame(width: 60, height: 60)
-                        .background(.orange)
+                        .background(.blue)
+                        .clipShape(.circle)
+                }
+                Button {
+                    previousNumber = currentNumber
+                    currentNumber = ""
+                    operation = "-"
+                } label: {
+                    Text("-")
+                        .foregroundStyle(.black)
+                        .font(.largeTitle)
+                        .frame(width: 60, height: 60)
+                        .background(.blue)
+                        .clipShape(.circle)
+                }
+                Button {
+                    previousNumber = currentNumber
+                    currentNumber = ""
+                    operation = "*"
+                } label: {
+                    Text("x")
+                        .foregroundStyle(.black)
+                        .font(.largeTitle)
+                        .frame(width: 60, height: 60)
+                        .background(.blue)
+                        .clipShape(.circle)
+                }
+                Button {
+                    previousNumber = currentNumber
+                    currentNumber = ""
+                    operation = "/"
+                } label: {
+                    Text("/")
+                        .foregroundStyle(.black)
+                        .font(.largeTitle)
+                        .frame(width: 60, height: 60)
+                        .background(.blue)
                         .clipShape(.circle)
                 }
             }
