@@ -5,7 +5,7 @@ struct CalculatorView: View {
     @State var previousNumber = " "
     @State var test = "1"
     @State var operation = ""
-    @State var answer = ""
+    @State var answer = 0
     @State var previousanswer = ""
     var body: some View {
         VStack {
@@ -170,7 +170,19 @@ struct CalculatorView: View {
                         .clipShape(.circle)
                 }
             }
+            Button {
+                if let previousnumber =
+                    Double(previousNumber), let currentnumber = Double(currentNumber) {
+                    if operation == "+" {
+                        answer = previousnumber + currentNumber
+                    }
+                }
+            }
+            label: {
+                <#code#>
+            }
+            
         }
     }
+    
 }
-
