@@ -14,12 +14,51 @@ struct CalculatorView: View {
                 .background(.gray)
                 .clipShape(Rectangle())
             
+            HStack {
+                Button {
+                    currentNumber += "1"
+                    answer = currentNumber
+                } label: {
+                    Text("1")
+                        .foregroundStyle(.black)
+                        .font(.largeTitle)
+                        .frame(width: 60, height: 60)
+                        .background(.orange)
+                        .clipShape(.circle)
+                }
+                Button {
+                    currentNumber += "2"
+                    answer = currentNumber
+                } label: {
+                    Text("2")
+                        .foregroundStyle(.black)
+                        .font(.largeTitle)
+                        .frame(width: 60, height: 60)
+                        .background(.orange)
+                        .clipShape(.circle)
+                }
+                Button {
+                    currentNumber += "3"
+                    answer = currentNumber
+                } label: {
+                    Text("3")
+                        .foregroundStyle(.black)
+                        .font(.largeTitle)
+                        .frame(width: 60, height: 60)
+                        .background(.orange)
+                        .clipShape(.circle)
+                }
+            }
             Button {
                 currentNumber += "1"
                 answer = currentNumber
             } label: {
-                Text("1")
+                Text("4")
                     .foregroundStyle(.black)
+                    .font(.largeTitle)
+                    .frame(width: 60, height: 60)
+                    .background(.orange)
+                    .clipShape(.circle)
             }
 
         }
