@@ -5,11 +5,11 @@ struct CalculatorView: View {
     @State var previousNumber = " "
     @State var test = "1"
     @State var operation = ""
-    @State var answer = 0
+    @State var answer = ""
     @State var previousanswer = ""
     var body: some View {
         VStack {
-            Text(test)
+            Text(answer)
                 .frame(width: 400, height: 50)
                 .background(.gray)
                 .clipShape(Rectangle())
@@ -174,12 +174,18 @@ struct CalculatorView: View {
                 if let previousnumber =
                     Double(previousNumber), let currentnumber = Double(currentNumber) {
                     if operation == "+" {
-                        answer = previousnumber + currentNumber
+                        answer = String(previousnumber + currentnumber)
+                    }else if operation == "-" {
+                        answer = String(previousnumber - currentnumber)
+                    }else if operation == "/" {
+                        answer = String(previousnumber / currentnumber)
+                    }else if operation == "*" {
+                        answer = String(previousnumber * currentnumber)
                     }
                 }
             }
             label: {
-                <#code#>
+                Text("calculate")
             }
             
         }
