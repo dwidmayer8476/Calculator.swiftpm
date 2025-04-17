@@ -17,9 +17,13 @@ struct ContentView: View {
                     
                 }
                 .font(.largeTitle)
+                
+                NavigationLink("Go to Explanations") {
+                    explanationsView()
+                }
+                .font(.largeTitle)
+                .padding(50)
             }
-            
-            
         }
     }
 }
