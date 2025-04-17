@@ -170,24 +170,43 @@ struct CalculatorView: View {
                         .clipShape(.circle)
                 }
             }
-            Button {
-                if let previousnumber =
-                    Double(previousNumber), let currentnumber = Double(currentNumber) {
-                    if operation == "+" {
-                        answer = String(previousnumber + currentnumber)
-                    }else if operation == "-" {
-                        answer = String(previousnumber - currentnumber)
-                    }else if operation == "/" {
-                        answer = String(previousnumber / currentnumber)
-                    }else if operation == "*" {
-                        answer = String(previousnumber * currentnumber)
+            HStack {
+                Button {
+                    if let previousnumber =
+                        Double(previousNumber), let currentnumber = Double(currentNumber) {
+                        if operation == "+" {
+                            answer = String(previousnumber + currentnumber)
+                        }else if operation == "-" {
+                            answer = String(previousnumber - currentnumber)
+                        }else if operation == "/" {
+                            answer = String(previousnumber / currentnumber)
+                        }else if operation == "*" {
+                            answer = String(previousnumber * currentnumber)
+                        }
                     }
                 }
+                label: {
+                    Text("Calculate")
+                        .font(.largeTitle)
+                        .foregroundStyle(.black)
+                        .background(.blue)
+                        .clipShape(RoundedRectangle(cornerRadius: 40))
+                }
+                
+                
+                
+                Button {
+                    currentNumber = ""
+                    previousanswer = ""
+                    operation = ""
+                    answer = ""
+                } label: {
+                    Text("RESET")
+                        .foregroundStyle(.red)
+                }
+                
+
             }
-            label: {
-                Text("calculate")
-            }
-            
         }
     }
     
