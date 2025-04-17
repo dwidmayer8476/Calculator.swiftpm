@@ -12,8 +12,6 @@ struct graphingEquationsView: View {
                 TextField("Input your equation", text: $graph)
                     .textFieldStyle(.roundedBorder)
                 
-               
-                
                 Spacer()
                
                 NavigationStack{
@@ -25,6 +23,7 @@ struct graphingEquationsView: View {
                 }
                 
             }
+            .font(.largeTitle)
             
         
     }
