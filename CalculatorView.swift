@@ -14,6 +14,7 @@ struct CalculatorView: View {
                 .background(.gray)
                 .clipShape(Rectangle())
             
+            
             HStack {
                 Button {
                     currentNumber += "1"
