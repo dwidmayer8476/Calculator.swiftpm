@@ -9,7 +9,7 @@ struct CalculatorView: View {
     @State var previousanswer = ""
     var body: some View {
         VStack {
-            Text(test)
+            Text(answer)
                 .frame(width: 400, height: 50)
                 .background(.gray)
                 .clipShape(Rectangle())
@@ -171,7 +171,25 @@ struct CalculatorView: View {
                         .clipShape(.circle)
                 }
             }
+            Button {
+                if let previousnumber =
+                    Double(previousNumber), let currentnumber = Double(currentNumber) {
+                    if operation == "+" {
+                        answer = String(previousnumber + currentnumber)
+                    }else if operation == "-" {
+                        answer = String(previousnumber - currentnumber)
+                    }else if operation == "/" {
+                        answer = String(previousnumber / currentnumber)
+                    }else if operation == "*" {
+                        answer = String(previousnumber * currentnumber)
+                    }
+                }
+            }
+            label: {
+                Text("calculate")
+            }
+            
         }
     }
+    
 }
-
