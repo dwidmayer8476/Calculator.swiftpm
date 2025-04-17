@@ -9,6 +9,11 @@ struct explanationsView: View {
             }
             .font(.largeTitle)
     
+            NavigationLink("Learn Trigonometry") {
+                trigView()
+            }
+            .font(.largeTitle)
+            .padding(50)
         }
     }
 }
