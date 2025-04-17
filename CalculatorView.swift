@@ -216,6 +216,11 @@ struct CalculatorView: View {
                     }
                 }
             }
+        NavigationStack{
+            NavigationLink("Do trigonometry ->") {
+                TrigonometryView()
+            }
+        }
         }
     }
 
