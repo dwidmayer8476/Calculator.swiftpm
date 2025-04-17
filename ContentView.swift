@@ -12,7 +12,7 @@ struct ContentView: View {
                 }
                 .font(.largeTitle)
                 .padding(50)
-                NavigationLink("Go to Graphing") {
+                NavigationLink("Go to Graphing Calculator") {
                     graphingEquationsView()
                     
                 }
