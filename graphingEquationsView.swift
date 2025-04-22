@@ -2,6 +2,7 @@
 import SwiftUI
 struct graphingEquationsView: View {
     @State var graph = ""
+    @State var equation = "y = "
     var body: some View {
             VStack{
                 Text("Graphing Calculator")
@@ -9,8 +10,11 @@ struct graphingEquationsView: View {
                     .padding()
                 Spacer()
                 
-                TextField("Input your equation", text: $graph)
-                    .textFieldStyle(.roundedBorder)
+                TextField("y =", text: $equation)
+                                .textFieldStyle(RoundedBorderTextFieldStyle())
+                                .padding()
+                            GraphView(equation: equation)
+                                .frame(height: 300)
                 
                 Spacer()
                
