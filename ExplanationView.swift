@@ -14,6 +14,10 @@ struct ExplanationView: View {
             }
             .font(.largeTitle)
             .padding(50)
+            NavigationLink("Learn right triangles") {
+                rightTrianglesLearningView()
+            }
+            .font(.largeTitle)
         }
     }
 }
