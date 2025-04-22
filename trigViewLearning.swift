@@ -19,7 +19,7 @@ struct trigView: View {
                 .font(.largeTitle)
             Text("used in the form Tan(Angle°) = Adjacent Side / Hypotnuse. or Tan(adjacent / hypotnuse)^-1 to find the angle")
             
-            
+          
         }
     }
 }
