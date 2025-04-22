@@ -173,6 +173,7 @@ struct CalculatorView: View {
                             .background(.blue)
                             .clipShape(.circle)
                     }
+                    
                 }
                 HStack {
                     Button {
