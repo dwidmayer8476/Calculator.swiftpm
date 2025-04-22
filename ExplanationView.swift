@@ -1,10 +1,10 @@
 import SwiftUI
 
-struct explanationsView: View {
+struct ExplanationView: View {
    
     var body: some View {
         NavigationStack {
-            NavigationLink("Learn to add, subtract, and multiply") {
+            NavigationLink("Learn to add, subtract, multiply, and divide") {
                 addSubDivMultView()
             }
             .font(.largeTitle)
@@ -14,6 +14,10 @@ struct explanationsView: View {
             }
             .font(.largeTitle)
             .padding(50)
+            NavigationLink("Learn right triangles") {
+                rightTrianglesLearningView()
+            }
+            .font(.largeTitle)
         }
     }
 }
