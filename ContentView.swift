@@ -19,7 +19,7 @@ struct ContentView: View {
                 .font(.largeTitle)
                 
                 NavigationLink("Go to Explanations") {
-                    explanationsView()
+                    ExplanationView()
                 }
                 .font(.largeTitle)
                 .padding(50)

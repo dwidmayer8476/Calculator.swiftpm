@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct explanationsView: View {
+struct ExplanationView: View {
    
     var body: some View {
         NavigationStack {
