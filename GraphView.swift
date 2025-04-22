@@ -1,9 +1,13 @@
 import SwiftUI
+import Charts
 
 struct GraphView: View {
-    let rows = 10
+    var equation: String = ""
     let cols = 10
+    let rows = 10
+    let resolution = 200
     var body: some View {
+        
         GeometryReader{ geo in
             Path{ path in
                 let w = geo.size.width
