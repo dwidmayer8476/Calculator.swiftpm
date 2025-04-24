@@ -10,14 +10,14 @@ struct graphingEquationsView: View {
                 .padding()
             Spacer()
             
-            HStack {
+            VStack {
                 Text("y =")
                 TextField("e.g. x+2", text: $equation)
                     .textFieldStyle(.roundedBorder)
                     .padding(.horizontal)
                 VStack{
                     
-                    GraphView(equation: equation)
+                    GraphView()
                         .frame(height: 300)
                     
                     Spacer()
