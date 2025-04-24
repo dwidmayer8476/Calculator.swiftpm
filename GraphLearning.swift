@@ -3,7 +3,12 @@ import SwiftUI
 struct GraphLearningView: View {
    
     var body: some View {
-        Text("Test")
+        NavigationStack {
+            NavigationLink("Try It Out"){
+                graphingEquationsView()
+            }
+            
+        }
     }
 }
 

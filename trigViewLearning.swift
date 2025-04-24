@@ -3,6 +3,7 @@ import SwiftUI
 struct trigView: View {
    
     var body: some View {
+        NavigationStack{
         VStack{
             Text("What Is Trigonometry?")
                 .font(.largeTitle)
@@ -18,8 +19,10 @@ struct trigView: View {
             Text("Tangent (Tan)")
                 .font(.largeTitle)
             Text("used in the form Tan(Angle°) = Adjacent Side / Hypotnuse. or Tan(adjacent / hypotnuse)^-1 to find the angle")
-            
-          
+                NavigationLink("Try it Out") {
+                    TrigonometryView()
+                }
+            }
         }
     }
 }

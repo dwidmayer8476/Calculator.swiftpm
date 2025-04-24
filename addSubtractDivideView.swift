@@ -20,6 +20,11 @@ struct addSubDivMultView: View {
                 .font(.largeTitle)
             Text("Division is a mathematical operation where you split a number into equal parts. It is essentially the opposite of multiplication. When you divide, you're figuring out how many times one number (called the divisor) can fit into another number (called the dividend). The result of division is called the quotient. Example: 10 / 2 = 5, think of this as 2 groups of ?? equals 10 (in this senario ?? = 2).")
                 .font(.footnote)
+            NavigationStack {
+                NavigationLink("Try It Out") {
+                    CalculatorView()
+                }
+            }
         }
     }
 }
