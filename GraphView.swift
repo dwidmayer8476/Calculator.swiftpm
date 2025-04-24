@@ -28,4 +28,7 @@ struct GraphView: View {
             .stroke(Color.gray.opacity(0.5), lineWidth: 0.5)
         }
     }
+
+#Preview {
+    GraphView()
 }
