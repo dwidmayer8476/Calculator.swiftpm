@@ -10,7 +10,7 @@ struct CalculatorView: View {
     var body: some View {
         VStack {
             NavigationStack {
-
+                
                 Text(answer)
                     .frame(width: 400, height: 50)
                     .background(.gray)
@@ -124,7 +124,6 @@ struct CalculatorView: View {
                     }
                 }
                 HStack{
-                    
                     Button {
                         previousNumber = currentNumber
                         currentNumber = ""
@@ -174,6 +173,22 @@ struct CalculatorView: View {
                             .clipShape(.circle)
                     }
                     
+                    
+                    Button {
+                        if !currentNumber.contains(".") {
+                            
+                            currentNumber += currentNumber.isEmpty ? "0." : "."
+                            answer = currentNumber
+                        }
+                    } label: {
+                        Text(".")
+                            .foregroundStyle(.black)
+                            .font(.largeTitle)
+                            .frame(width: 60, height: 60)
+                            .background(.blue)
+                            .clipShape(.circle)
+                        
+                    }
                 }
                 HStack {
                     Button {
@@ -217,4 +232,3 @@ struct CalculatorView: View {
         }
     }
 }
-
