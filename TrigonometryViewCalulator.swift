@@ -16,19 +16,27 @@ struct TrigonometryView: View {
         HStack {
             TextField("Adjacent Leg", value: $ALeg, format: .number)
                 .textFieldStyle(.roundedBorder)
-                .keyboardType(.decimalPad)
             TextField("Opposite Leg", value: $OLeg, format: .number)
                 .textFieldStyle(.roundedBorder)
-            keyboardType(.decimalPad)
+
             TextField("Hypotnuse", value: $hypotnuse, format: .number)
                 .textFieldStyle(.roundedBorder)
-            keyboardType(.decimalPad)
+
             TextField("Enter Angle", text: $angle)
                 .textFieldStyle(.roundedBorder)
-            keyboardType(.decimalPad)
+
         }
         
         Text("Enter x If value is unknown or uneeded")
+        Picker("units", selection: $useDegrees) {
+            Text("Degrees").tag(true)
+            Text("Radian").tag(false)
+        }
+        Group {
+            TrigResultsRow(label: "sin", value: sin(angleInRadians))
+            TrigResultsRow(label: "cos", value: cos(angleInRadians))
+            TrigResultsRow(label: "tan", value: tan(angleInRadians))
+        }
         HStack{
             Button {
                 //       start         If {
