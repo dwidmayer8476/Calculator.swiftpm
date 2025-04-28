@@ -11,10 +11,11 @@ struct CalculatorView: View {
         VStack {
             NavigationStack {
                 
-                Text(answer.isEmpty ? "Empty" : answer)
+                Text(answer.isEmpty ? "0" : answer)
                     .frame(width: 400, height: 50)
                     .background(.gray)
                     .clipShape(Rectangle())
+                    .frame(alignment: .trailing)
                 
                 
                 HStack {
@@ -239,6 +240,9 @@ struct CalculatorView: View {
         NavigationStack{
             NavigationLink("Do trigonometry ->") {
                 TrigonometryView()
+                NavigationLink("See Previous Answers ->") {
+                    PrevAnswersView()
+                }
             }
         }
     }
