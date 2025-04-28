@@ -11,7 +11,7 @@ struct CalculatorView: View {
         VStack {
             NavigationStack {
                 
-                Text(answer)
+                Text(answer.isEmpty ? "Empty" : answer)
                     .frame(width: 400, height: 50)
                     .background(.gray)
                     .clipShape(Rectangle())
@@ -125,7 +125,9 @@ struct CalculatorView: View {
                 }
                 HStack{
                     Button {
-                        previousNumber = currentNumber
+                        if !answer.isEmpty {
+                            previousNumber = answer
+                        }
                         currentNumber = ""
                         operation = "+"
                     } label: {
@@ -137,7 +139,9 @@ struct CalculatorView: View {
                             .clipShape(.circle)
                     }
                     Button {
-                        previousNumber = currentNumber
+                        if !answer.isEmpty {
+                            previousNumber = answer
+                        }
                         currentNumber = ""
                         operation = "-"
                     } label: {
@@ -149,7 +153,9 @@ struct CalculatorView: View {
                             .clipShape(.circle)
                     }
                     Button {
-                        previousNumber = currentNumber
+                        if !answer.isEmpty {
+                            previousNumber = answer
+                        }
                         currentNumber = ""
                         operation = "*"
                     } label: {
@@ -161,7 +167,9 @@ struct CalculatorView: View {
                             .clipShape(.circle)
                     }
                     Button {
-                        previousNumber = currentNumber
+                        if !answer.isEmpty {
+                            previousNumber = answer
+                        }
                         currentNumber = ""
                         operation = "/"
                     } label: {
@@ -204,6 +212,9 @@ struct CalculatorView: View {
                                 answer = String(previousnumber * currentnumber)
                             }
                         }
+                        currentNumber = answer
+                        currentNumber = ""
+                        operation = ""
                     }
                     label: {
                         Text("Calculate")
@@ -219,7 +230,7 @@ struct CalculatorView: View {
                         operation = ""
                         answer = ""
                     } label: {
-                        Text("RESET")
+                        Text("CLEAR")
                             .foregroundStyle(.red)
                     }
                 }
@@ -231,4 +242,8 @@ struct CalculatorView: View {
             }
         }
     }
+}
+
+#Preview {
+    CalculatorView()
 }
