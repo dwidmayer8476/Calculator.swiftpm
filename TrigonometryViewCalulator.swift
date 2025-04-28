@@ -1,80 +1,109 @@
 import SwiftUI
 
 struct TrigonometryView: View {
-    @State var ALeg:Int = 0
-    @State var OLeg:Int = 0
-    @State var hypotnuse:Int = 0
-    @State var angle = ""
-    //    @State var angleInput = ""
-    @State var useDegrees: Bool = true
-    var angleInRadians: Double {
-        guard let angle = Double(angle) else {return 0 }
-        return useDegrees ? angle * .pi / 180 : angle
-    }
+    @State var opposite: String = ""
+    @State var adjacent: String = ""
+    @State var hypotenuse: String = ""
+    @State var angle: String = ""
+    @State var selectedMode = "Find Angle"
+    @State var modes = ["Find Angle", "Find Side"]
     var body: some View {
-        Text("Adjacent       Opposite         Hypotnuse        Angle        ")
-        HStack {
-            TextField("Adjacent Leg", value: $ALeg, format: .number)
-                .textFieldStyle(.roundedBorder)
-            TextField("Opposite Leg", value: $OLeg, format: .number)
-                .textFieldStyle(.roundedBorder)
-
-            TextField("Hypotnuse", value: $hypotnuse, format: .number)
-                .textFieldStyle(.roundedBorder)
-
-            TextField("Enter Angle", text: $angle)
-                .textFieldStyle(.roundedBorder)
-
-        }
+        NavigationView {
+                  VStack(spacing: 20) {
+                      Text("Triangle Solver")
+                          .font(.largeTitle)
+                          .bold()
+                      
+                      Picker("Mode", selection: $selectedMode) {
+                          ForEach(modes, id: \.self) { mode in
+                              Text(mode)
+                          }
+                      }
+                      .pickerStyle(SegmentedPickerStyle())
+                      .padding()
+                      
+                      if selectedMode == "Find Angle" {
+                          TextField("Opposite side", text: $opposite)
+                              .keyboardType(.decimalPad)
+                              .textFieldStyle(RoundedBorderTextFieldStyle())
+                          TextField("Adjacent side", text: $adjacent)
+                              .keyboardType(.decimalPad)
+                              .textFieldStyle(RoundedBorderTextFieldStyle())
+                          TextField("Hypotenuse", text: $hypotenuse)
+                              .keyboardType(.decimalPad)
+                              .textFieldStyle(RoundedBorderTextFieldStyle())
+                      } else {
+                          TextField("Angle (degrees)", text: $angle)
+                              .keyboardType(.decimalPad)
+                              .textFieldStyle(RoundedBorderTextFieldStyle())
+                          TextField("Known side (opposite/adjacent/hypotenuse)", text: $hypotenuse)
+                              .keyboardType(.decimalPad)
+                              .textFieldStyle(RoundedBorderTextFieldStyle())
+                      }
+                                 
+                                     Button("Calculate") {
+                                         calculate()
+                                     }
+                                     .buttonStyle(.borderedProminent)
+                                     .padding()
+                                     
+                                     if !resultText.isEmpty {
+                                         Text(resultText)
+                                             .font(.title2)
+                                             .padding()
+                                     }
+                                     
+                                     Spacer()
+                                 }
+                                 .padding()
+                             }
+                         }
+    @State  var resultText: String = ""
         
-        Text("Enter x If value is unknown or uneeded")
-        Picker("units", selection: $useDegrees) {
-            Text("Degrees").tag(true)
-            Text("Radian").tag(false)
-        }
-        Group {
-            TrigResultsRow(label: "sin", value: sin(angleInRadians))
-            TrigResultsRow(label: "cos", value: cos(angleInRadians))
-            TrigResultsRow(label: "tan", value: tan(angleInRadians))
-        }
-        HStack{
-            Button {
-                //       start         If {
-                //
-                //                }
-            } label: {
-                Text("SIN")
-                    .foregroundStyle(.green)
-                    .font(.largeTitle)
-                    .frame(width: 70, height: 60)
-                    .background(.blue)
-                    .clipShape(.ellipse)
-            }
-            Button {
+         func calculate() {
+            if selectedMode == "Find Angle" {
+                if let opp = Double(opposite), let adj = Double(adjacent) {
+                    let angleRadians = atan(opp / adj)
+                    let angleDegrees = angleRadians * 180 / .pi
+                    resultText = "Angle = \(String(format: "%.2f", angleDegrees))° (from tan⁻¹)"
+                    return
+                }
                 
-            } label: {
-                Text("COS")
-                    .foregroundStyle(.green)
-                    .font(.largeTitle)
-                    .frame(width: 70, height: 60)
-                    .background(.blue)
-                    .clipShape(.ellipse)
-            }
-            Button {
+                if let opp = Double(opposite), let hyp = Double(hypotenuse) {
+                    let angleRadians = asin(opp / hyp)
+                    let angleDegrees = angleRadians * 180 / .pi
+                    resultText = "Angle = \(String(format: "%.2f", angleDegrees))° (from sin⁻¹)"
+                    return
+                }
                 
-            } label: {
-                Text("TAN")
-                    .foregroundStyle(.green)
-                    .font(.largeTitle)
-                    .frame(width: 70, height: 60)
-                    .background(.blue)
-                    .clipShape(.ellipse)
+                if let adj = Double(adjacent), let hyp = Double(hypotenuse) {
+                    let angleRadians = acos(adj / hyp)
+                    let angleDegrees = angleRadians * 180 / .pi
+                    resultText = "Angle = \(String(format: "%.2f", angleDegrees))° (from cos⁻¹)"
+                    return
+                }
+                
+                resultText = "Please enter at least two sides."
+                
+            } else {
+                if let angleDeg = Double(angle), let knownSide = Double(hypotenuse) {
+                    let angleRad = angleDeg * .pi / 180
+                    let opposite = sin(angleRad) * knownSide
+                    let adjacent = cos(angleRad) * knownSide
+                    resultText = """
+                    Opposite = \(String(format: "%.2f", opposite))
+                    Adjacent = \(String(format: "%.2f", adjacent))
+                    """
+                } else {
+                    resultText = "Please enter an angle and a side."
+                }
             }
-            
         }
     }
-}
 
-#Preview {
-    TrigonometryView()
-}
+
+
+                         
+ 
+
+

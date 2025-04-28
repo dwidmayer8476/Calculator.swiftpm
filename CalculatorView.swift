@@ -198,56 +198,67 @@ struct CalculatorView: View {
                             .clipShape(.circle)
                         
                     }
-                }
-                HStack {
-                    Button {
-                        if let previousnumber =
-                            Double(previousNumber), let currentnumber = Double(currentNumber) {
-                            if operation == "+" {
-                                answer = String(previousnumber + currentnumber)
-                            }else if operation == "-" {
-                                answer = String(previousnumber - currentnumber)
-                            }else if operation == "/" {
-                                answer = String(previousnumber / currentnumber)
-                            }else if operation == "*" {
-                                answer = String(previousnumber * currentnumber)
-                            }
-                        }
-                        currentNumber = answer
-                        currentNumber = ""
-                        operation = ""
-                    }
-                    label: {
-                        Text("Calculate")
-                            .font(.largeTitle)
-                            .foregroundStyle(.black)
-                            .background(.blue)
-                            .clipShape(RoundedRectangle(cornerRadius: 40))
-                    }
                     
-                    Button {
-                        currentNumber = ""
-                        previousanswer = ""
-                        operation = ""
-                        answer = ""
-                    } label: {
-                        Text("CLEAR")
-                            .foregroundStyle(.red)
+                }//Hcb
+                Button {
+                    if !answer.isEmpty {
+                        previousNumber = answer
                     }
+                    currentNumber = ""
+                    operation = "^"
+                } label: {
+                    Text("^")
+                        .foregroundStyle(.black)
+                        .font(.largeTitle)
+                        .frame(width: 60, height: 60)
+                        .background(.blue)
+                        .clipShape(.circle)
+                    HStack {
+                        Button {
+                            if let previousnumber =
+                                Double(previousNumber), let currentnumber = Double(currentNumber) {
+                                if operation == "+" {
+                                    answer = String(previousnumber + currentnumber)
+                                }else if operation == "-" {
+                                    answer = String(previousnumber - currentnumber)
+                                }else if operation == "/" {
+                                    answer = String(previousnumber / currentnumber)
+                                }else if operation == "*" {
+                                    answer = String(previousnumber * currentnumber)
+                                }
+                            }
+                            currentNumber = answer
+                            currentNumber = ""
+                            operation = ""
+                        }
+                        label: {
+                            Text("Calculate")
+                                .font(.largeTitle)
+                                .foregroundStyle(.black)
+                                .background(.blue)
+                                .clipShape(RoundedRectangle(cornerRadius: 40))
+                        }
+                        
+                        Button {
+                            currentNumber = ""
+                            previousanswer = ""
+                            operation = ""
+                            answer = ""
+                        } label: {
+                            Text("CLEAR")
+                                .foregroundStyle(.red)
+                        }
+                    }//Hc
                 }
-            }
-        }
-        NavigationStack{
-            NavigationLink("Do trigonometry ->") {
-                TrigonometryView()
-                NavigationLink("See Previous Answers ->") {
-                    PrevAnswersView()
+            }//Vw
+            NavigationStack{
+                NavigationLink("Do trigonometry ->") {
+                    TrigonometryView()
+                    NavigationLink("See Previous Answers ->") {
+                        PrevAnswersView()
+                    }
                 }
             }
         }
     }
-}
-
-#Preview {
-    CalculatorView()
 }
