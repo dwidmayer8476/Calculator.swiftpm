@@ -90,10 +90,7 @@ struct TrigonometryView: View {
                     let angleRad = angleDeg * .pi / 180
                     let opposite = sin(angleRad) * knownSide
                     let adjacent = cos(angleRad) * knownSide
-                    resultText = """
-                    Opposite = \(String(format: "%.2f", opposite))
-                    Adjacent = \(String(format: "%.2f", adjacent))
-                    """
+                    resultText = "Opposite = \(String(format: "%.2f", opposite))\nAdjacent = \(String(format: "%.2f", adjacent))"
                 } else {
                     resultText = "Please enter an angle and a side."
                 }
@@ -101,9 +98,11 @@ struct TrigonometryView: View {
         }
     }
 
-
+//acos is cos and is known by the computer already 
 
                          
  
 
-
+#Preview {
+    TrigonometryView()
+}

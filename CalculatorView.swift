@@ -199,7 +199,7 @@ struct CalculatorView: View {
                         
                     }
                     
-                }//Hcb
+                }//Hstackcalculatorbuttons
                 Button {
                     if !answer.isEmpty {
                         previousNumber = answer
@@ -225,6 +225,8 @@ struct CalculatorView: View {
                                     answer = String(previousnumber / currentnumber)
                                 }else if operation == "*" {
                                     answer = String(previousnumber * currentnumber)
+                                }else if operation == "^"{
+                                    answer = String(pow(previousnumber,currentnumber))//powr is known by computer means power of
                                 }
                             }
                             currentNumber = answer
@@ -248,7 +250,7 @@ struct CalculatorView: View {
                             Text("CLEAR")
                                 .foregroundStyle(.red)
                         }
-                    }//Hc
+                    }//Hstackcalulator
                 }
             }//Vw
             NavigationStack{
