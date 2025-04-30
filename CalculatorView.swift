@@ -213,51 +213,68 @@ struct CalculatorView: View {
                         .frame(width: 60, height: 60)
                         .background(.blue)
                         .clipShape(.circle)
-                    HStack {
-                        Button {
-                            if let previousnumber =
-                                Double(previousNumber), let currentnumber = Double(currentNumber) {
-                                if operation == "+" {
-                                    answer = String(previousnumber + currentnumber)
-                                }else if operation == "-" {
-                                    answer = String(previousnumber - currentnumber)
-                                }else if operation == "/" {
-                                    answer = String(previousnumber / currentnumber)
-                                }else if operation == "*" {
-                                    answer = String(previousnumber * currentnumber)
-                                }else if operation == "^"{
-                                    answer = String(pow(previousnumber,currentnumber))//powr is known by computer means power of
-                                }
-                            }
-                            currentNumber = answer
-                            currentNumber = ""
-                            operation = ""
+                    Button {
+                        if !answer.isEmpty {
+                            previousNumber = answer
                         }
-                        label: {
-                            Text("Calculate")
-                                .font(.largeTitle)
-                                .foregroundStyle(.black)
-                                .background(.blue)
-                                .clipShape(RoundedRectangle(cornerRadius: 40))
-                        }
+                        currentNumber = ""
+                        operation = "√"
                         
-                        Button {
-                            currentNumber = ""
-                            previousanswer = ""
-                            operation = ""
-                            answer = ""
-                        } label: {
-                            Text("CLEAR")
-                                .foregroundStyle(.red)
+                    } label: {
+                        Text("√x")
+                            .foregroundStyle(.black)
+                            .font(.largeTitle)
+                            .frame(width: 60, height: 60)
+                            .background(.blue)
+                            .clipShape(.circle)
+                        
+                        HStack {
+                            Button {
+                                if let previousnumber =
+                                    Double(previousNumber), let currentnumber = Double(currentNumber) {
+                                    if operation == "+" {
+                                        answer = String(previousnumber + currentnumber)
+                                    }else if operation == "-" {
+                                        answer = String(previousnumber - currentnumber)
+                                    }else if operation == "/" {
+                                        answer = String(previousnumber / currentnumber)
+                                    }else if operation == "*" {
+                                        answer = String(previousnumber * currentnumber)
+                                    }else if operation == "^"{
+                                        answer = String(pow(previousnumber,currentnumber))
+                                        //pwer is known by computer means power of which is also like the acos on the trigonometry calc
+                                    }
+                                }
+                                currentNumber = answer
+                                currentNumber = ""
+                                operation = ""
+                            }
+                            label: {
+                                Text("Calculate")
+                                    .font(.largeTitle)
+                                    .foregroundStyle(.black)
+                                    .background(.blue)
+                                    .clipShape(RoundedRectangle(cornerRadius: 40))
+                            }
+                            
+                            Button {
+                                currentNumber = ""
+                                previousanswer = ""
+                                operation = ""
+                                answer = ""
+                            } label: {
+                                Text("CLEAR")
+                                    .foregroundStyle(.red)
+                            }
+                        }//Hstackcalulator
+                    }
+                }//Vw
+                NavigationStack{
+                    NavigationLink("Do trigonometry ->") {
+                        TrigonometryView()
+                        NavigationLink("See Previous Answers ->") {
+                            PrevAnswersView()
                         }
-                    }//Hstackcalulator
-                }
-            }//Vw
-            NavigationStack{
-                NavigationLink("Do trigonometry ->") {
-                    TrigonometryView()
-                    NavigationLink("See Previous Answers ->") {
-                        PrevAnswersView()
                     }
                 }
             }

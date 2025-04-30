@@ -10,10 +10,10 @@ struct rightTrianglesLearningView: View {
                 .font(.footnote)
             Text("Solving Right Triangles")
                 .font(.largeTitle)
-            Text("All angles should equal 180 added up. To find the length of the hypotnuse remeber the equation that is the Pythagoreom Theoreum. The equation is A^2 + B^2 = C^2, A is a leg, B is another leg, and C is the Hypotnuse. If 2 angles in the right triangle are 45° than each leg is isosclese meaning they are equal and each leg is x length and the hypotnuse would be x Square root 2 long. If one angle is 30° and the other is 60° The side opposite of the 30° is X, The side opposite of the 60° is X root 3 long, and the hypotnuse is 2X. ")
+            Text("All angles should equal 180 added up. To find the length of the hypotnuse remeber the equation that is the Pythagoreom Theoreum. The equation is A^2 + B^2 = C^2, A is a leg, B is another leg, and C is the Hypotnuse. If 2 angles in the right triangle are 45° than each leg is isosclese meaning they are equal and each leg is x length and the hypotnuse would be x√2 long. If one angle is 30° and the other is 60° The side opposite of the 30° is X, The side opposite of the 60° is X root 3 long, and the hypotnuse is 2X. ")
                 .font(.footnote)
-            NavigationLink("See how Right Triangles work in Trigonometry") {
-                TrigonometryView()
+            NavigationLink("See how Right Triangles work into Trigonometry") {
+                trigView()
             }
         }
     }
