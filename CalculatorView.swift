@@ -126,6 +126,32 @@ struct CalculatorView: View {
                 }
                 HStack{
                     Button {
+                        currentNumber += "0"
+                        answer = currentNumber
+                    } label: {
+                        Text("0")
+                            .foregroundStyle(.black)
+                            .font(.largeTitle)
+                            .frame(width: 60, height: 60)
+                            .background(.gray)
+                            .clipShape(.circle)
+                    }
+                    Button {
+                        if !currentNumber.contains(".") {
+                            
+                            currentNumber += currentNumber.isEmpty ? "0." : "."
+                            answer = currentNumber
+                        }
+                    } label: {
+                        Text(".")
+                            .foregroundStyle(.black)
+                            .font(.largeTitle)
+                            .frame(width: 60, height: 60)
+                            .background(.gray)
+                            .clipShape(.circle)
+                        
+                    }
+                    Button {
                         if !answer.isEmpty {
                             previousNumber = answer
                         }
@@ -147,6 +173,43 @@ struct CalculatorView: View {
                         operation = "-"
                     } label: {
                         Text("-")
+                            .foregroundStyle(.black)
+                            .font(.largeTitle)
+                            .frame(width: 60, height: 60)
+                            .background(.blue)
+                            .clipShape(.circle)
+                    }
+                    
+                    
+                    
+                    
+                }
+                    
+                //Hstackcalculatorbuttons
+                HStack {
+                    Button {
+                        if !answer.isEmpty {
+                            previousNumber = answer
+                        }
+                        currentNumber = ""
+                        operation = "√"
+                        
+                    } label: {
+                        Text("√x")
+                            .foregroundStyle(.black)
+                            .font(.largeTitle)
+                            .frame(width: 60, height: 60)
+                            .background(.blue)
+                            .clipShape(.circle)
+                    }
+                    Button {
+                        if !answer.isEmpty {
+                            previousNumber = answer
+                        }
+                        currentNumber = ""
+                        operation = "^"
+                    } label: {
+                        Text("x^2")
                             .foregroundStyle(.black)
                             .font(.largeTitle)
                             .frame(width: 60, height: 60)
@@ -181,53 +244,7 @@ struct CalculatorView: View {
                             .background(.blue)
                             .clipShape(.circle)
                     }
-                    
-                    
-                    Button {
-                        if !currentNumber.contains(".") {
-                            
-                            currentNumber += currentNumber.isEmpty ? "0." : "."
-                            answer = currentNumber
-                        }
-                    } label: {
-                        Text(".")
-                            .foregroundStyle(.black)
-                            .font(.largeTitle)
-                            .frame(width: 60, height: 60)
-                            .background(.blue)
-                            .clipShape(.circle)
-                        
-                    }
-                    
-                }//Hstackcalculatorbuttons
-                Button {
-                    if !answer.isEmpty {
-                        previousNumber = answer
-                    }
-                    currentNumber = ""
-                    operation = "^"
-                } label: {
-                    Text("^")
-                        .foregroundStyle(.black)
-                        .font(.largeTitle)
-                        .frame(width: 60, height: 60)
-                        .background(.blue)
-                        .clipShape(.circle)
-                    Button {
-                        if !answer.isEmpty {
-                            previousNumber = answer
-                        }
-                        currentNumber = ""
-                        operation = "√"
-                        
-                    } label: {
-                        Text("√x")
-                            .foregroundStyle(.black)
-                            .font(.largeTitle)
-                            .frame(width: 60, height: 60)
-                            .background(.blue)
-                            .clipShape(.circle)
-                        
+                }
                         HStack {
                             Button {
                                 if let previousnumber =
@@ -242,9 +259,13 @@ struct CalculatorView: View {
                                         answer = String(previousnumber * currentnumber)
                                     }else if operation == "^"{
                                         answer = String(pow(previousnumber,currentnumber))
-                                        //pwer is known by computer means power of which is also like the acos on the trigonometry calc
+                                        
+                                        //pwer is known by computer means power of which is also like the acos on the trigonometry calc use for squaare root
+                                    }else if operation == "√"{
+                                   answer = String(sqrt(previousnumber))
                                     }
                                 }
+                                //sqrt is also known
                                 currentNumber = answer
                                 currentNumber = ""
                                 operation = ""
@@ -279,5 +300,8 @@ struct CalculatorView: View {
                 }
             }
         }
-    }
+    
+
+#Preview {
+    CalculatorView()
 }
