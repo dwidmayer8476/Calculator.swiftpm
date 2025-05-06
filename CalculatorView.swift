@@ -7,6 +7,7 @@ struct CalculatorView: View {
     @State var operation = ""
     @State var answer = ""
     @State var previousanswer = ""
+    @State var history: [String] = []
     var body: some View {
         VStack {
             NavigationStack {
@@ -269,6 +270,7 @@ struct CalculatorView: View {
                                 currentNumber = answer
                                 currentNumber = ""
                                 operation = ""
+                                history.insert(answer, at: 0)
                             }
                             label: {
                                 Text("Calculate")
@@ -287,6 +289,21 @@ struct CalculatorView: View {
                                 Text("CLEAR")
                                     .foregroundStyle(.red)
                             }
+                                ScrollView {
+                                    VStack(alignment: .leading, spacing: 4) {
+                                        ForEach(history, id: \.self) { ans in
+                                            Text(ans)
+                                                .font(.largeTitle)
+                                                .padding(.vertical, 2)
+                                        }
+                                    }
+                                    .padding(.horizontal)
+                                }
+                                .frame(height: 200)
+                                .background(Color.gray.opacity(0.2))
+                                .cornerRadius(8)
+                                .padding(.horizontal)
+                            
                         }//Hstackcalulator
                     }
                 }//Vw
