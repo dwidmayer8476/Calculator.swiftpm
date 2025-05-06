@@ -2,9 +2,15 @@ import SwiftUI
 
 @main
 struct MyApp: App {
+    @AppStorage("hasSeenTutorial") private var hasSeenTutorial: Bool = false
     var body: some Scene {
         WindowGroup {
-            ContentView()
+            if !hasSeenTutorial {
+                ContentView()
+            }else {
+                
+                TutorialView()
+            }
         }
     }
 }

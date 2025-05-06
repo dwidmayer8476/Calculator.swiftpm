@@ -207,7 +207,7 @@ struct CalculatorView: View {
                             previousNumber = answer
                         }
                         currentNumber = ""
-                        operation = "^"
+                        operation = "squared"
                     } label: {
                         Text("x^2")
                             .foregroundStyle(.black)
@@ -257,8 +257,8 @@ struct CalculatorView: View {
                                         answer = String(previousnumber / currentnumber)
                                     }else if operation == "*" {
                                         answer = String(previousnumber * currentnumber)
-                                    }else if operation == "^"{
-                                        answer = String(pow(previousnumber,currentnumber))
+                                    }else if operation == "squared"{
+                                        answer = String(currentnumber * currentnumber)
                                         
                                         //pwer is known by computer means power of which is also like the acos on the trigonometry calc use for squaare root
                                     }else if operation == "√"{

@@ -1,7 +1,7 @@
 import SwiftUI
 
-struct AddingView: View {
-    @State var graph = ""
+struct TutorialView: View {
+
     var body: some View {
         VStack{
     
