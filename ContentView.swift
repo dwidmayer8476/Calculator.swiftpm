@@ -2,11 +2,12 @@ import SwiftUI
 
 struct ContentView: View {
     var body: some View {
-        
+        NavigationStack {
         VStack{
-            Text("Calculator")
+            
+            Text("The Calculator")
                 .font(.largeTitle)
-            NavigationStack {
+                .padding()
                 NavigationLink("Go to Calculator"){
                     CalculatorView()
                 }
