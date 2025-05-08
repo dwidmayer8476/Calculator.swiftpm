@@ -263,7 +263,7 @@ struct CalculatorView: View {
                                         
                                         //pwer is known by computer means power of which is also like the acos on the trigonometry calc use for squaare root
                                     }else if operation == "√"{
-                                   answer = String(sqrt(previousnumber))
+                                   answer = String(sqrt(currentnumber))
                                     }
                                 }
                                 //sqrt is also known
@@ -304,9 +304,9 @@ struct CalculatorView: View {
                                 .cornerRadius(8)
                                 .padding(.horizontal)
                             
-                        }//Hstackcalulator
+                        }
                     }
-                }//Vw
+                }
                 NavigationStack{
                     NavigationLink("Do trigonometry ->") {
                         TrigonometryView()
