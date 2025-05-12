@@ -8,12 +8,22 @@ struct graphingEquationsView: View {
     @State var equation = ""
     let desmosURL = URL(string: "https://www.desmos.com/calculator")!
     var body: some View {
-        VStack{
+        
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [Color.black, Color.black]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
             
-            Link("Try out in seperate tab", destination: desmosURL)
-            
-            
-            SafariView(url: desmosURL)
+            VStack{
+                
+                Link("Try out in seperate tab", destination: desmosURL)
+                
+                
+                SafariView(url: desmosURL)
+            }
         }
     }
     

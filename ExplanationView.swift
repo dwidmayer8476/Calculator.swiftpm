@@ -3,27 +3,38 @@ import SwiftUI
 struct ExplanationView: View {
    
     var body: some View {
-        NavigationStack {
-            NavigationLink("Learn to add, subtract, multiply, and divide") {
-                addSubDivMultView()
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [Color.black, Color.purple]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+            
+            
+            NavigationStack {
+                NavigationLink("Learn to add, subtract, multiply, and divide") {
+                    addSubDivMultView()
+                }
+                
+                
+                NavigationLink("Learn Trigonometry") {
+                    trigView()
+                }
+                
+                .padding(50)
+                NavigationLink("Learn Right Triangles") {
+                    rightTrianglesLearningView()
+                }
+                
+                .padding(50)
+                NavigationLink("Learn Graphing") {
+                    GraphLearningView()
+                }
+                
+                .padding(50)
             }
-            .font(.largeTitle)
-    
-            NavigationLink("Learn Trigonometry") {
-                trigView()
-            }
-            .font(.largeTitle)
-            .padding(50)
-            NavigationLink("Learn Right Triangles") {
-                rightTrianglesLearningView()
-            }
-            .font(.largeTitle)
-            .padding(50)
-            NavigationLink("Learn Graphing") {
-                GraphLearningView()
-            }
-            .font(.largeTitle)
-            .padding(50)
+            .font(.system(size: 32, weight: .semibold))
         }
     }
 }
