@@ -7,6 +7,7 @@ struct TrigonometryView: View {
     @State var angle: String = ""
     @State var selectedMode = "Find Angle"
     @State var modes = ["Find Angle", "Find Side"]
+    @State private var history: [String] = []
     var body: some View {
         NavigationView {
             VStack(spacing: 20) {
