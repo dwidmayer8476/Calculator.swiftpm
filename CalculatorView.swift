@@ -263,7 +263,7 @@ struct CalculatorView: View {
                                         
                                         //pwer is known by computer means power of which is also like the acos on the trigonometry calc use for squaare root
                                     }else if operation == "√"{
-                                   answer = String(sqrt(currentnumber))
+                                   answer = String(sqrt(previousnumber))
                                     }
                                 }
                                 //sqrt is also known
