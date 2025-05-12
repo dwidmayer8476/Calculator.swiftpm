@@ -185,7 +185,7 @@ struct CalculatorView: View {
                     
                     
                 }
-                    
+                
                 //Hstackcalculatorbuttons
                 HStack {
                     Button {
@@ -246,78 +246,99 @@ struct CalculatorView: View {
                             .clipShape(.circle)
                     }
                 }
-                        HStack {
-                            Button {
-                                if let previousnumber =
-                                    Double(previousNumber), let currentnumber = Double(currentNumber) {
-                                    if operation == "+" {
-                                        answer = String(previousnumber + currentnumber)
-                                    }else if operation == "-" {
-                                        answer = String(previousnumber - currentnumber)
-                                    }else if operation == "/" {
-                                        answer = String(previousnumber / currentnumber)
-                                    }else if operation == "*" {
-                                        answer = String(previousnumber * currentnumber)
-                                    }else if operation == "squared"{
-                                        answer = String(currentnumber * currentnumber)
-                                        
-                                        //pwer is known by computer means power of which is also like the acos on the trigonometry calc use for squaare root
-                                    }else if operation == "√"{
-                                   answer = String(sqrt(previousnumber))
-                                    }
-                                }
-                                //sqrt is also known
-                                currentNumber = answer
-                                currentNumber = ""
-                                operation = ""
-                                history.insert(answer, at: 0)
+                HStack {
+                    Button {
+                        if let previousnumber =
+                            Double(previousNumber), let currentnumber = Double(currentNumber) {
+                            if operation == "+" {
+                                answer = String(previousnumber + currentnumber)
+                                print(answer)
+                                print(currentnumber)
+                                print(previousNumber)
+                            }else if operation == "-" {
+                                answer = String(previousnumber - currentnumber)
+                                print(answer)
+                                print(currentnumber)
+                                print(previousNumber)
+                            }else if operation == "/" {
+                                answer = String(previousnumber / currentnumber)
+                                print(answer)
+                                print(currentnumber)
+                                print(previousNumber)
+                            }else if operation == "*" {
+                                answer = String(previousnumber * currentnumber)
+                                print(answer)
+                                print(currentnumber)
+                                print(previousNumber)
+                            }else if operation == "squared"{
+                                answer = String(currentnumber * currentnumber)
+                                print(answer)
+                                print(currentnumber)
+                                print(previousNumber)
+                                //pwer is known by computer means power of which is also like the acos on the trigonometry calc use for squaare root
+                            }else if operation == "√"{
+                                answer = String(sqrt(currentnumber))
+                                print(answer)
+                                print(currentnumber)
+                                print(previousNumber)
                             }
-                            label: {
-                                Text("Calculate")
+                        }
+                        //sqrt is also known
+                        currentNumber = answer
+                        currentNumber = ""
+                        operation = ""
+                        history.insert(answer, at: 0)
+                    }
+                    label: {
+                        Text("Calculate")
+                            .font(.largeTitle)
+                            .foregroundStyle(.black)
+                            .background(.blue)
+                            .clipShape(RoundedRectangle(cornerRadius: 40))
+                    }
+                    
+                    Button {
+                        currentNumber = ""
+                        previousanswer = ""
+                        operation = ""
+                        answer = ""
+                    } label: {
+                        Text("CLEAR")
+                            .foregroundStyle(.red)
+                    }
+                    ScrollView {
+                        VStack(alignment: .leading, spacing: 4) {
+                            ForEach(history, id: \.self) { ans in
+                                Text(ans)
                                     .font(.largeTitle)
-                                    .foregroundStyle(.black)
-                                    .background(.blue)
-                                    .clipShape(RoundedRectangle(cornerRadius: 40))
+                                    .padding(.vertical, 2)
                             }
-                            
-                            Button {
-                                currentNumber = ""
-                                previousanswer = ""
-                                operation = ""
-                                answer = ""
-                            } label: {
-                                Text("CLEAR")
-                                    .foregroundStyle(.red)
-                            }
-                                ScrollView {
-                                    VStack(alignment: .leading, spacing: 4) {
-                                        ForEach(history, id: \.self) { ans in
-                                            Text(ans)
-                                                .font(.largeTitle)
-                                                .padding(.vertical, 2)
-                                        }
-                                    }
-                                    .padding(.horizontal)
-                                }
-                                .frame(height: 200)
-                                .background(Color.gray.opacity(0.2))
-                                .cornerRadius(8)
-                                .padding(.horizontal)
-                            
                         }
+                        .padding(.horizontal)
                     }
-                }
-                NavigationStack{
-                    NavigationLink("Do trigonometry ->") {
-                        TrigonometryView()
-                        NavigationLink("See Previous Answers ->") {
-                            PrevAnswersView()
-                        }
-                    }
+                    .frame(height: 200)
+                    .background(Color.gray.opacity(0.2))
+                    .cornerRadius(8)
+                    .padding(.horizontal)
+                    
                 }
             }
         }
-    
+        NavigationStack{
+            NavigationLink("Typing Calculator ->") {
+                TextFieldCalc()
+            }
+            NavigationLink("Do trigonometry ->") {
+                TrigonometryView()
+                NavigationLink("See Previous Answers ->") {
+                    PrevAnswersView()
+                }
+                
+            }
+        }
+    }
+}
+
 
 #Preview {
     CalculatorView()

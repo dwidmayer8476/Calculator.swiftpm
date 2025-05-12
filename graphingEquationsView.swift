@@ -34,6 +34,8 @@ struct graphingEquationsView: View {
 
 
 
+
+
 #Preview {
     graphingEquationsView()
 }
