@@ -443,35 +443,32 @@ struct CalculatorView: View {
                     VStack(alignment: .leading, spacing: 4) {
                         ForEach(history, id: \.self) { ans in
                             Text(ans)
-                                .font(.largeTitle)
                                 .padding(.vertical, 2)
+                                .frame(height: 100)
+                                .background(Color.gray.opacity(0.2))
+                                .cornerRadius(8)
+                                .padding(.horizontal)
+                                .font(.system(size: 32, weight: .semibold))
+                            
                         }
                     }
                 }
-                .padding(.horizontal)
-                
-                .frame(height: 100)
-                .background(Color.gray.opacity(0.2))
-                .cornerRadius(8)
-                .padding(.horizontal)
+                NavigationStack{
+                    NavigationLink("Do trigonometry ->") {
+                        TrigonometryView()
+                        NavigationLink("See Previous Answers ->") {
+                            PrevAnswersView()
+                        }
+                    }
+                }
+                .font(.system(size: 32, weight: .semibold))
                 
             }
         }//Vw
-        NavigationStack{
-            NavigationLink("Do trigonometry ->"){
-                TrigonometryView()
-                //                        NavigationLink("See Previous Answers ->") {
-                //                            PrevAnswersView()
-                //                        }
-            }
-        }
-        
-        .font(.system(size: 32, weight: .semibold))
-        
     }
 }
     
 
-//#Preview {
-//    CalculatorView()
-//}
+#Preview {
+    CalculatorView()
+}

@@ -2,8 +2,11 @@ import SwiftUI
 
 struct PrevAnswersView: View {
     @State var previousAnswers: [String] = []
-//    @Binding var resultText: String
+   // @Binding var resultText: String
     var body: some View {
+
+        Text("Previous Answers")
+
         
         
         ScrollView {
@@ -20,5 +23,6 @@ struct PrevAnswersView: View {
             .background(Color.gray.opacity(0.2))
             .cornerRadius(8)
             .padding(.horizontal)
+
     }
 }
