@@ -13,10 +13,18 @@ struct CalculatorView: View {
             NavigationStack {
                 
                 Text(answer.isEmpty ? "0" : answer)
-                    .frame(width: 400, height: 50)
-                    .background(.gray)
-                    .clipShape(Rectangle())
-                    .frame(alignment: .trailing)
+                    .font(.system(size: 28, weight: .bold, design: .rounded))
+                        .padding()
+                        .background(
+                            LinearGradient(
+                                gradient: Gradient(colors: [Color.purple, Color.blue]),
+                                startPoint: .leading,
+                                endPoint: .trailing
+                            )
+                        )
+                        .foregroundColor(.white)
+                        .cornerRadius(10)
+                        .shadow(color: Color.black.opacity(0.25), radius: 5, x: 0, y: 4)
                 
                 
                 HStack {
@@ -25,33 +33,54 @@ struct CalculatorView: View {
                         answer = currentNumber
                     } label: {
                         Text("1")
-                            .foregroundStyle(.blue)
-                            .font(.largeTitle)
-                            .frame(width: 60, height: 60)
-                            .background(.black)
-                            .clipShape(.circle)
+                            .font(.system(size: 32, weight: .semibold))
+                            .frame(width: 60, height: 80)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.pink]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                     }
                     Button {
                         currentNumber += "2"
                         answer = currentNumber
                     } label: {
                         Text("2")
-                            .foregroundStyle(.blue)
-                            .font(.largeTitle)
-                            .frame(width: 60, height: 60)
-                            .background(.black)
-                            .clipShape(.circle)
+                            .font(.system(size: 32, weight: .semibold))
+                            .frame(width: 60, height: 80)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.pink]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                     }
                     Button {
                         currentNumber += "3"
                         answer = currentNumber
                     } label: {
                         Text("3")
-                            .foregroundStyle(.blue)
-                            .font(.largeTitle)
-                            .frame(width: 60, height: 60)
-                            .background(.black)
-                            .clipShape(.circle)
+                            .font(.system(size: 32, weight: .semibold))
+                            .frame(width: 60, height: 80)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.pink]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                     }
                     
                 }
@@ -61,33 +90,54 @@ struct CalculatorView: View {
                         answer = currentNumber
                     } label: {
                         Text("4")
-                            .foregroundStyle(.blue)
-                            .font(.largeTitle)
-                            .frame(width: 60, height: 60)
-                            .background(.black)
-                            .clipShape(.circle)
+                            .font(.system(size: 32, weight: .semibold))
+                            .frame(width: 60, height: 80)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.pink]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                     }
                     Button {
                         currentNumber += "5"
                         answer = currentNumber
                     } label: {
                         Text("5")
-                            .foregroundStyle(.blue)
-                            .font(.largeTitle)
-                            .frame(width: 60, height: 60)
-                            .background(.black)
-                            .clipShape(.circle)
+                            .font(.system(size: 32, weight: .semibold))
+                            .frame(width: 60, height: 80)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.pink]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                     }
                     Button {
                         currentNumber += "6"
                         answer = currentNumber
                     } label: {
                         Text("6")
-                            .foregroundStyle(.blue)
-                            .font(.largeTitle)
-                            .frame(width: 60, height: 60)
-                            .background(.black)
-                            .clipShape(.circle)
+                            .font(.system(size: 32, weight: .semibold))
+                            .frame(width: 60, height: 80)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.pink]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                     }
                 }
                 HStack {
@@ -96,33 +146,54 @@ struct CalculatorView: View {
                         answer = currentNumber
                     } label: {
                         Text("7")
-                            .foregroundStyle(.blue)
-                            .font(.largeTitle)
-                            .frame(width: 60, height: 60)
-                            .background(.black)
-                            .clipShape(.circle)
+                            .font(.system(size: 32, weight: .semibold))
+                            .frame(width: 60, height: 80)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.pink]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                     }
                     Button {
                         currentNumber += "8"
                         answer = currentNumber
                     } label: {
                         Text("8")
-                            .foregroundStyle(.blue)
-                            .font(.largeTitle)
-                            .frame(width: 60, height: 60)
-                            .background(.black)
-                            .clipShape(.circle)
+                            .font(.system(size: 32, weight: .semibold))
+                            .frame(width: 60, height: 80)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.pink]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                     }
                     Button {
                         currentNumber += "9"
                         answer = currentNumber
                     } label: {
                         Text("9")
-                            .foregroundStyle(.blue)
-                            .font(.largeTitle)
-                            .frame(width: 60, height: 60)
-                            .background(.black)
-                            .clipShape(.circle)
+                            .font(.system(size: 32, weight: .semibold))
+                            .frame(width: 60, height: 80)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.pink]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                     }
                 }
                 HStack{
@@ -131,11 +202,18 @@ struct CalculatorView: View {
                         answer = currentNumber
                     } label: {
                         Text("0")
-                            .foregroundStyle(.black)
-                            .font(.largeTitle)
-                            .frame(width: 60, height: 60)
-                            .background(.gray)
-                            .clipShape(.circle)
+                            .font(.system(size: 32, weight: .semibold))
+                            .frame(width: 60, height: 80)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.blue]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                     }
                     Button {
                         if !currentNumber.contains(".") {
@@ -145,11 +223,19 @@ struct CalculatorView: View {
                         }
                     } label: {
                         Text(".")
-                            .foregroundStyle(.black)
-                            .font(.largeTitle)
-                            .frame(width: 60, height: 60)
-                            .background(.gray)
-                            .clipShape(.circle)
+                        
+                            .font(.system(size: 32, weight: .semibold))
+                            .frame(width: 60, height: 80)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.blue]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                         
                     }
                     Button {
@@ -160,11 +246,18 @@ struct CalculatorView: View {
                         operation = "+"
                     } label: {
                         Text("+")
-                            .foregroundStyle(.black)
-                            .font(.largeTitle)
-                            .frame(width: 60, height: 60)
-                            .background(.blue)
-                            .clipShape(.circle)
+                            .font(.system(size: 32, weight: .semibold))
+                            .frame(width: 60, height: 80)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.blue]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                     }
                     Button {
                         if !answer.isEmpty {
@@ -174,11 +267,18 @@ struct CalculatorView: View {
                         operation = "-"
                     } label: {
                         Text("-")
-                            .foregroundStyle(.black)
-                            .font(.largeTitle)
-                            .frame(width: 60, height: 60)
-                            .background(.blue)
-                            .clipShape(.circle)
+                            .font(.system(size: 32, weight: .semibold))
+                            .frame(width: 60, height: 80)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.blue]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                     }
                     
                     
@@ -197,11 +297,18 @@ struct CalculatorView: View {
                         
                     } label: {
                         Text("√x")
-                            .foregroundStyle(.black)
-                            .font(.largeTitle)
-                            .frame(width: 60, height: 60)
-                            .background(.blue)
-                            .clipShape(.circle)
+                            .font(.system(size: 32, weight: .semibold))
+                            .frame(width: 60, height: 80)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.blue]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                     }
                     Button {
                         if !answer.isEmpty {
@@ -211,11 +318,18 @@ struct CalculatorView: View {
                         operation = "squared"
                     } label: {
                         Text("x^2")
-                            .foregroundStyle(.black)
-                            .font(.largeTitle)
-                            .frame(width: 60, height: 60)
-                            .background(.blue)
-                            .clipShape(.circle)
+                            .font(.system(size: 32, weight: .semibold))
+                            .frame(width: 60, height: 80)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.blue]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                     }
                     Button {
                         if !answer.isEmpty {
@@ -225,11 +339,18 @@ struct CalculatorView: View {
                         operation = "*"
                     } label: {
                         Text("x")
-                            .foregroundStyle(.black)
-                            .font(.largeTitle)
-                            .frame(width: 60, height: 60)
-                            .background(.blue)
-                            .clipShape(.circle)
+                            .font(.system(size: 32, weight: .semibold))
+                            .frame(width: 60, height: 80)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.blue]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                     }
                     Button {
                         if !answer.isEmpty {
@@ -239,11 +360,18 @@ struct CalculatorView: View {
                         operation = "/"
                     } label: {
                         Text("/")
-                            .foregroundStyle(.black)
-                            .font(.largeTitle)
-                            .frame(width: 60, height: 60)
-                            .background(.blue)
-                            .clipShape(.circle)
+                            .font(.system(size: 32, weight: .semibold))
+                            .frame(width: 60, height: 80)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.blue]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .foregroundColor(.white)
+                            .clipShape(Circle())
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                     }
                 }
                 HStack {
@@ -267,20 +395,12 @@ struct CalculatorView: View {
                                 print(previousNumber)
                             }else if operation == "*" {
                                 answer = String(previousnumber * currentnumber)
-                                print(answer)
-                                print(currentnumber)
-                                print(previousNumber)
                             }else if operation == "squared"{
                                 answer = String(currentnumber * currentnumber)
-                                print(answer)
-                                print(currentnumber)
-                                print(previousNumber)
+                                
                                 //pwer is known by computer means power of which is also like the acos on the trigonometry calc use for squaare root
                             }else if operation == "√"{
-                                answer = String(sqrt(currentnumber))
-                                print(answer)
-                                print(currentnumber)
-                                print(previousNumber)
+                                answer = String(sqrt(previousnumber))
                             }
                         }
                         //sqrt is also known
@@ -291,9 +411,16 @@ struct CalculatorView: View {
                     }
                     label: {
                         Text("Calculate")
-                            .font(.largeTitle)
-                            .foregroundStyle(.black)
-                            .background(.blue)
+                            .font(.system(size: 32, weight: .semibold))
+                            .frame(width: 150, height: 70)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.green.opacity(0.7), Color.blue]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .foregroundColor(.white)
                             .clipShape(RoundedRectangle(cornerRadius: 40))
                     }
                     
@@ -304,41 +431,52 @@ struct CalculatorView: View {
                         answer = ""
                     } label: {
                         Text("CLEAR")
-                            .foregroundStyle(.red)
+                            .font(.system(size: 32, weight: .semibold))
+                            .frame(width: 150, height: 70)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.red.opacity(0.7), Color.blue]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .foregroundColor(.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 40, ))
+                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                     }
-                    ScrollView {
-                        VStack(alignment: .leading, spacing: 4) {
-                            ForEach(history, id: \.self) { ans in
-                                Text(ans)
-                                    .font(.largeTitle)
-                                    .padding(.vertical, 2)
-                            }
-                        }
-                        .padding(.horizontal)
-                    }
-                    .frame(height: 200)
-                    .background(Color.gray.opacity(0.2))
-                    .cornerRadius(8)
-                    .padding(.horizontal)
+                    //
                     
+                }//Hstackcalulator
+                
+                ScrollView {
+                    VStack(alignment: .leading, spacing: 4) {
+                        ForEach(history, id: \.self) { ans in
+                            Text(ans)
+                                .padding(.vertical, 2)
+                                .frame(height: 100)
+                                .background(Color.gray.opacity(0.2))
+                                .cornerRadius(8)
+                                .padding(.horizontal)
+                                .font(.system(size: 32, weight: .semibold))
+                            
+                        }
+                    }
                 }
-            }
-        }
-        NavigationStack{
-            NavigationLink("Typing Calculator ->") {
-                TextFieldCalc()
-            }
-            NavigationLink("Do trigonometry ->") {
-                TrigonometryView()
-                NavigationLink("See Previous Answers ->") {
-                    PrevAnswersView()
+                NavigationStack{
+                    NavigationLink("Do trigonometry ->") {
+                        TrigonometryView()
+                        NavigationLink("See Previous Answers ->") {
+                            PrevAnswersView()
+                        }
+                    }
                 }
+                .font(.system(size: 32, weight: .semibold))
                 
             }
-        }
+        }//Vw
     }
 }
-
+    
 
 #Preview {
     CalculatorView()
