@@ -465,9 +465,9 @@ struct CalculatorView: View {
                     NavigationStack{
                         NavigationLink("Do trigonometry ->") {
                             TrigonometryView()
-                            NavigationLink("See Previous Answers ->") {
-                                PrevAnswersView()
-                            }
+//                            NavigationLink("See Previous Answers ->") {
+//                                PrevAnswersView()
+//                            }
                         }
                     }
                     .font(.system(size: 32, weight: .semibold))

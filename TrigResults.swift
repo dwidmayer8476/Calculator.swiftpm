@@ -6,10 +6,10 @@ struct TrigResultsRow: View {
     var body: some View {
         HStack{
             Text("\(label):")
-                .font(.title2)
             Spacer()
             Text("\(value, specifier: "%.4f")")
         }
+        .font(.system(size: 32, weight: .semibold))
     }
 }
 //#Preview {
