@@ -24,6 +24,14 @@ struct ExplanationView: View {
             }
             .font(.largeTitle)
             .padding(50)
+            NavigationLink("Learn Squares and Square Roots") {
+                SquareLearning()
+            }
+            .font(.largeTitle)
+            .padding(50)
         }
     }
+}
+#Preview {
+    ExplanationView()
 }
