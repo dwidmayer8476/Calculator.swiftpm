@@ -434,7 +434,7 @@ struct CalculatorView: View {
                                 .frame(width: 150, height: 70)
                                 .background(
                                     LinearGradient(
-                                        gradient: Gradient(colors: [Color.red.opacity(0.7), Color.blue]),
+                                        gradient: Gradient(colors: [Color.red.opacity(0.7), Color.orange]),
                                         startPoint: .topLeading,
                                         endPoint: .bottomTrailing
                                     )
