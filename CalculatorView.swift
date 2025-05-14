@@ -463,8 +463,13 @@ struct CalculatorView: View {
                         }
                     }
                     NavigationStack{
+                        NavigationLink("Do Squares And Square Roots ->") {
+                            SquaresAndRoots()
+                        }
+                        .font(.system(size: 27, weight: .semibold))
                         NavigationLink("Do trigonometry ->") {
                             TrigonometryView()
+                            
 //                            NavigationLink("See Previous Answers ->") {
 //                                PrevAnswersView()
 //                            }

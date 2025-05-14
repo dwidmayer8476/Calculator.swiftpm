@@ -33,6 +33,10 @@ struct ExplanationView: View {
                 }
                 
                 .padding(50)
+                
+                NavigationLink("Learn Squares And Sqaure Roots") {
+                    SquareLearning()
+                }
             }
             .font(.system(size: 32, weight: .semibold))
         }
