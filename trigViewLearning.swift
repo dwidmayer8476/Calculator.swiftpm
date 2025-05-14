@@ -1,7 +1,7 @@
 import SwiftUI
 
 struct trigView: View {
-   
+    
     var body: some View {
         NavigationStack{
             ZStack {
