@@ -38,3 +38,6 @@ struct ExplanationView: View {
         }
     }
 }
+#Preview {
+    ExplanationView()
+}

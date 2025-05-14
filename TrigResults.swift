@@ -1,6 +1,6 @@
 import SwiftUI
 
-struct TrigResultsRow: View {
+struct TrigResults: View {
     let label: String
     let value: Double
     var body: some View {
@@ -12,6 +12,4 @@ struct TrigResultsRow: View {
         .font(.system(size: 32, weight: .semibold))
     }
 }
-//#Preview {
-//    TrigResultsRow()
-//}
+
