@@ -463,6 +463,9 @@ struct CalculatorView: View {
                     }
                 }
                 NavigationStack{
+                    NavigationLink("Typing Calculator ->"){
+                        TextFieldCalc()
+                    }
                     NavigationLink("Do trigonometry ->") {
                         TrigonometryView()
                         NavigationLink("See Previous Answers ->") {
@@ -470,7 +473,7 @@ struct CalculatorView: View {
                         }
                     }
                 }
-                .font(.system(size: 32, weight: .semibold))
+                .font(.system(size: 20, weight: .semibold))
                 
             }
         }//Vw
