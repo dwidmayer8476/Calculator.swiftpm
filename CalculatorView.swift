@@ -215,29 +215,7 @@ struct CalculatorView: View {
                             .clipShape(Circle())
                             .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                     }
-                    Button {
-                        if !currentNumber.contains(".") {
-                            
-                            currentNumber += currentNumber.isEmpty ? "0." : "."
-                            answer = currentNumber
-                        }
-                    } label: {
-                        Text(".")
-                        
-                            .font(.system(size: 32, weight: .semibold))
-                            .frame(width: 60, height: 80)
-                            .background(
-                                LinearGradient(
-                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.blue]),
-                                    startPoint: .topLeading,
-                                    endPoint: .bottomTrailing
-                                )
-                            )
-                            .foregroundColor(.white)
-                            .clipShape(Circle())
-                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
-                        
-                    }
+                    
                     Button {
                         if !answer.isEmpty {
                             previousNumber = answer
@@ -288,15 +266,58 @@ struct CalculatorView: View {
                 
                 //Hstackcalculatorbuttons
                 HStack {
+//                    Button {
+//                        if !answer.isEmpty {
+//                            previousNumber = answer
+//                        }
+//                        currentNumber = ""
+//                        operation = "√"
+//                        
+//                    } label: {
+//                        Text("√x")
+//                            .font(.system(size: 32, weight: .semibold))
+//                            .frame(width: 60, height: 80)
+//                            .background(
+//                                LinearGradient(
+//                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.blue]),
+//                                    startPoint: .topLeading,
+//                                    endPoint: .bottomTrailing
+//                                )
+//                            )
+//                            .foregroundColor(.white)
+//                            .clipShape(Circle())
+//                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
+//                    }
+//                    Button {
+//                        if !answer.isEmpty {
+//                            previousNumber = answer
+//                        }
+//                        currentNumber = ""
+//                        operation = "squared"
+//                    } label: {
+//                        Text("x^2")
+//                            .font(.system(size: 32, weight: .semibold))
+//                            .frame(width: 60, height: 80)
+//                            .background(
+//                                LinearGradient(
+//                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.blue]),
+//                                    startPoint: .topLeading,
+//                                    endPoint: .bottomTrailing
+//                                )
+//                            )
+//                            .foregroundColor(.white)
+//                            .clipShape(Circle())
+//                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
+//                    }
                     Button {
-                        if !answer.isEmpty {
-                            previousNumber = answer
+                        if !currentNumber.contains(".") {
+                            
+                            currentNumber += currentNumber.isEmpty ? "0." : "."
+                            answer = currentNumber
                         }
-                        currentNumber = ""
-                        operation = "√"
+                    } label: {
+                        Text(".")
                         
-                    } label: {
-                        Text("√x")
                             .font(.system(size: 32, weight: .semibold))
                             .frame(width: 60, height: 80)
                             .background(
@@ -309,27 +330,7 @@ struct CalculatorView: View {
                             .foregroundColor(.white)
                             .clipShape(Circle())
                             .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
-                    }
-                    Button {
-                        if !answer.isEmpty {
-                            previousNumber = answer
-                        }
-                        currentNumber = ""
-                        operation = "squared"
-                    } label: {
-                        Text("x^2")
-                            .font(.system(size: 32, weight: .semibold))
-                            .frame(width: 60, height: 80)
-                            .background(
-                                LinearGradient(
-                                    gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.blue]),
-                                    startPoint: .topLeading,
-                                    endPoint: .bottomTrailing
-                                )
-                            )
-                            .foregroundColor(.white)
-                            .clipShape(Circle())
-                            .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
+                        
                     }
                     Button {
                         if !answer.isEmpty {
@@ -463,6 +464,9 @@ struct CalculatorView: View {
                     }
                 }
                 NavigationStack{
+                    NavigationLink("Do Squares and Roots -> "){
+                        SquaresAndRoots()
+                    }
                     NavigationLink("Typing Calculator ->"){
                         TextFieldCalc()
                     }

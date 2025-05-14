@@ -12,7 +12,7 @@ struct TextFieldCalc: View {
            Divider()
             Text("Answer is:\(textAnswer)")
                 .padding()
-            Text("Directions: Enter in your numbers in to the text below and click the operation you wish to perform. Whole numbers only.")
+            Text("Directions: Enter in your numbers in to the text below and click the operation you wish to perform. *Whole numbers only*")
                 .font(.footnote)
             TextField("Type in first number", value: $textFirstNumber, format: .number)
                 .textFieldStyle(.roundedBorder)
