@@ -13,7 +13,7 @@ struct SquareLearning: View {
             
             VStack{
                 
-                
+
                 Text("What Are Square Roots?")
                     .font(.largeTitle)
                     .padding()
@@ -37,18 +37,21 @@ struct SquareLearning: View {
              yet powerful concept that plays a key role in various fields of
              science and everyday life.
              """)
-                        
-      
-        .font(.footnote)
-        NavigationStack {
-            NavigationLink("Try It Out"){
-                SquaresAndRoots()
+                
+                
+                .font(.footnote)
+                NavigationStack {
+                    NavigationLink("Try It Out"){
+                        SquaresAndRoots()
+                    }
+                    .foregroundStyle(.cyan)
+                }
             }
             .foregroundStyle(.white)
         }
     }
 }
-
-#Preview {
-    SquareLearning()
-}
+        
+        #Preview {
+            SquareLearning()
+        }
