@@ -10,67 +10,96 @@ struct TrigonometryView: View {
     @State private var history: [String] = []
     var body: some View {
         NavigationView {
-            VStack(spacing: 20) {
-                Text("Triangle Solver")
-                    .font(.largeTitle)
-                    .bold()
-                
-                Picker("Mode", selection: $selectedMode) {
-                    ForEach(modes, id: \.self) { mode in
-                        Text(mode)
-                    }
-                }
-                .pickerStyle(SegmentedPickerStyle())
-                .padding()
-                
-                if selectedMode == "Find Angle" {
-                    TextField("Opposite side", text: $opposite)
-                        .keyboardType(.decimalPad)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    TextField("Adjacent side", text: $adjacent)
-                        .keyboardType(.decimalPad)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    TextField("Hypotenuse", text: $hypotenuse)
-                        .keyboardType(.decimalPad)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                } else {
-                    TextField("Angle (degrees)", text: $angle)
-                        .keyboardType(.decimalPad)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                    TextField("Known side (opposite/adjacent/hypotenuse)", text: $hypotenuse)
-                        .keyboardType(.decimalPad)
-                        .textFieldStyle(RoundedBorderTextFieldStyle())
-                }
-                
-                Button("Calculate") {
-                    calculate()
-                }
-                .buttonStyle(.borderedProminent)
-                .padding()
-                
-                if !resultText.isEmpty {
-                    Text(resultText)
-                        .font(.title2)
-                        .padding()
-                }
-                Button {
-                    adjacent = ""
-                    opposite = ""
-                    hypotenuse = ""
-                    angle = ""
-                    resultText = ""
-                } label: {
-                    Text("RESET")
-                        .foregroundStyle(.red)
-                        .frame(width: 100, height: 40)
-                        .background(.blue)
-                }
-                Spacer()
-            }
-            .padding()
             
-           
+            ZStack {
+                LinearGradient(
+                    gradient: Gradient(colors: [Color.black, Color.purple]),
+                    startPoint: .topLeading,
+                    endPoint: .bottomTrailing
+                )
+                .ignoresSafeArea()
+                
+                
+                VStack(spacing: 20) {
+                    Text("Triangle Solver")
+                        .foregroundStyle(.white)
+                        .bold()
+                    
+                    Picker("Mode", selection: $selectedMode) {
+                        ForEach(modes, id: \.self) { mode in
+                            Text(mode)
+                        }
+                    }
+                    .pickerStyle(SegmentedPickerStyle())
+                    .padding()
+                    
+                    if selectedMode == "Find Angle" {
+                        TextField("Opposite side", text: $opposite)
+                            .keyboardType(.decimalPad)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        TextField("Adjacent side", text: $adjacent)
+                            .keyboardType(.decimalPad)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        TextField("Hypotenuse", text: $hypotenuse)
+                            .keyboardType(.decimalPad)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                    } else {
+                        TextField("Angle (degrees)", text: $angle)
+                            .keyboardType(.decimalPad)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                        TextField("Known side (opposite/adjacent/hypotenuse)", text: $hypotenuse)
+                            .keyboardType(.decimalPad)
+                            .textFieldStyle(RoundedBorderTextFieldStyle())
+                    }
+                    
+                    Button("Calculate") {
+                        calculate()
+                    }
+                    .font(.system(size: 32, weight: .semibold))
+                    .frame(width: 150, height: 70)
+                    .background(
+                        LinearGradient(
+                            gradient: Gradient(colors: [Color.green.opacity(0.7), Color.blue]),
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                    )
+                    .foregroundColor(.white)
+                    .clipShape(RoundedRectangle(cornerRadius: 40))
+                    
+                    if !resultText.isEmpty {
+                        Text(resultText)
+                            .font(.system(size: 32, weight: .semibold))
+                            .foregroundStyle(.white)
+                            .padding()
+                    }
+                    Button {
+                        adjacent = ""
+                        opposite = ""
+                        hypotenuse = ""
+                        angle = ""
+                        resultText = ""
+                    } label: {
+                        Text("RESET")
+                            .font(.system(size: 32, weight: .semibold))
+                            .frame(width: 150, height: 70)
+                            .background(
+                                LinearGradient(
+                                    gradient: Gradient(colors: [Color.red.opacity(0.7), Color.orange]),
+                                    startPoint: .topLeading,
+                                    endPoint: .bottomTrailing
+                                )
+                            )
+                            .foregroundColor(.white)
+                            .clipShape(RoundedRectangle(cornerRadius: 40))
+                    }
+                    Spacer()
+                }
+                .padding()
+                
+            }
         }
+        .font(.system(size: 32, weight: .semibold))
     }
     @State  var resultText: String = ""
     
