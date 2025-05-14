@@ -37,9 +37,12 @@ struct SquareLearning: View {
              yet powerful concept that plays a key role in various fields of
              science and everyday life.
              """)
-                
-                
-                .font(.footnote)
+                        
+      
+        .font(.footnote)
+        NavigationStack {
+            NavigationLink("Try It Out"){
+                SquaresAndRoots()
             }
             .foregroundStyle(.white)
         }
