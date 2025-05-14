@@ -8,6 +8,7 @@ struct ContentView: View {
             Text("The Calculator")
                 .font(.largeTitle)
                 .padding()
+                .offset(x: 0, y: -130)
                 NavigationLink("Go to Calculator"){
                     CalculatorView()
                 }
