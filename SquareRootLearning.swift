@@ -13,7 +13,7 @@ struct SquareLearning: View {
             
             VStack{
                 
-                
+
                 Text("What Are Square Roots?")
                     .foregroundStyle(.cyan)
                     .font(.largeTitle)

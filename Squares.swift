@@ -4,49 +4,72 @@ struct SquaresAndRoots: View {
     @State var EnteredNumber: String = ""
     @State var Answer: String = ""
     var body: some View {
-        
-        VStack{
-            VStack(spacing: 20) {
-                Text("Square & Square Root Calculator")
-                    .font(.largeTitle)
-                    .multilineTextAlignment(.center)
-                    .padding()
-                
-                TextField("Enter a number", text: $EnteredNumber)
-                    .keyboardType(.decimalPad)
-                    .textFieldStyle(RoundedBorderTextFieldStyle())
-                    .padding(.horizontal)
-                
-                HStack(spacing: 20) {
-                    Button(action: calculateSquare) {
-                        Text("Square")
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.blue)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
-                    }
+        ZStack {
+            LinearGradient(
+                gradient: Gradient(colors: [Color.black, Color.purple]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+            .ignoresSafeArea()
+            
+            VStack{
+                VStack(spacing: 20) {
+                    Text("Square & Square Root Calculator")
+                        .font(.largeTitle)
+                        .multilineTextAlignment(.center)
+                        .padding()
+                        .foregroundStyle(.white)
                     
-                    Button(action: calculateSquareRoot) {
-                        Text("Square Root")
-                            .padding()
-                            .frame(maxWidth: .infinity)
-                            .background(Color.green)
-                            .foregroundColor(.white)
-                            .cornerRadius(8)
+                    TextField("Enter a number", text: $EnteredNumber)
+                        .keyboardType(.decimalPad)
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
+                        .padding(.horizontal)
+                        .font(.system(size: 32, weight: .semibold))
+                    
+                    HStack(spacing: 20) {
+                        Button(action: calculateSquare) {
+                            Text("Square")
+                                .font(.system(size: 32, weight: .semibold))
+                                .frame(width: 150, height: 70)
+                                .background(
+                                    LinearGradient(
+                                        gradient: Gradient(colors: [Color.gray.opacity(0.7), Color.blue]),
+                                        startPoint: .topLeading,
+                                        endPoint: .bottomTrailing
+                                    )
+                                )
+                                .foregroundColor(.white)
+                                .clipShape(RoundedRectangle(cornerRadius: 40))
+                        }
+                        
+                        Button(action: calculateSquareRoot) {
+                            Text("Square Root")
+                                .font(.system(size: 32, weight: .semibold))
+                                .frame(width: 200, height: 70)
+                                .background(
+                                    LinearGradient(
+                                        gradient: Gradient(colors: [Color.gray.opacity(0.7), Color.blue]),
+                                        startPoint: .topLeading,
+                                        endPoint: .bottomTrailing
+                                    )
+                                )
+                                .foregroundColor(.white)
+                                .clipShape(RoundedRectangle(cornerRadius: 40))
+                        }
                     }
+                    .padding(.horizontal)
+                    
+                    Text("Result: \(Answer)")
+                        .padding()
+                        .foregroundStyle(.white)
+                        .font(.system(size: 32, weight: .semibold))
+                    
+                    Spacer()
                 }
-                .padding(.horizontal)
-                
-                Text("Result: \(Answer)")
-                    .font(.title)
-                    .padding()
-                
-                Spacer()
+                .padding()
             }
-            .padding()
+            .offset(x: 0, y: 120)
         }
-        .offset(x: 0, y: 120)
     }
         
         func calculateSquare() {
