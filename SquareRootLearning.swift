@@ -41,7 +41,7 @@ struct SquareLearning: View {
              science and everyday life.
              """)
                 
-                .foregroundStyle(.cyan)
+                .foregroundStyle(.white)
                 .font(.footnote)
                 NavigationStack {
                     NavigationLink("Try It Out"){
