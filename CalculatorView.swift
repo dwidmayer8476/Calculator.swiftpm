@@ -8,6 +8,7 @@ struct CalculatorView: View {
     @State var answer = ""
     @State var previousanswer = ""
     @State var history: [String] = []
+    @State var rotationAngle = 0.0
     var body: some View {
         ZStack {
             LinearGradient(
@@ -412,83 +413,87 @@ struct CalculatorView: View {
                             currentNumber = ""
                             operation = ""
                             history.insert(answer, at: 0)
-                        }
-                        label: {
-                            Text("Calculate")
-                                .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 150, height: 50)
-                                .background(
-                                    LinearGradient(
-                                        gradient: Gradient(colors: [Color.green.opacity(0.7), Color.blue]),
-                                        startPoint: .topLeading,
-                                        endPoint: .bottomTrailing
-                                    )
-                                )
-                                .foregroundColor(.white)
-                                .clipShape(RoundedRectangle(cornerRadius: 40))
-                        }
-                        
-                        Button {
-                            currentNumber = ""
-                            previousanswer = ""
-                            operation = ""
-                            answer = ""
-                        } label: {
-                            Text("CLEAR")
-                                .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 150, height: 50)
-                                .background(
-                                    LinearGradient(
-                                        gradient: Gradient(colors: [Color.red.opacity(0.7), Color.orange]),
-                                        startPoint: .topLeading,
-                                        endPoint: .bottomTrailing
-                                    )
-                                )
-                                .foregroundColor(.white)
-                                .clipShape(RoundedRectangle(cornerRadius: 40, ))
-                                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
-                        }
-                        //
-                        
-                    }//Hstackcalulator
-                    .padding(0)
-                    
-                    ScrollView {
-                        VStack(alignment: .leading, spacing: 4) {
-                            ForEach(history, id: \.self) { ans in
-                                Text(ans)
-                                    .padding(.vertical, 2)
-                                    .frame(width: 80, height: 80)
-                                    .background(Color.gray.opacity(0.2))
-                                    .cornerRadius(8)
-                                    .padding(.horizontal)
+                            
+//                            withAnimation(.easeInOut.speed(0.5)) {
+//                                rotationAngle += 90
+//                                }
+                            }
+                            label: {
+                                Text("Calculate")
                                     .font(.system(size: 32, weight: .semibold))
-                                    .foregroundStyle(.white)
-                                
+                                    .frame(width: 150, height: 50)
+                                    .background(
+                                        LinearGradient(
+                                            gradient: Gradient(colors: [Color.green.opacity(0.7), Color.blue]),
+                                            startPoint: .topLeading,
+                                            endPoint: .bottomTrailing
+                                        )
+                                    )
+                                    .foregroundColor(.white)
+                                    .clipShape(RoundedRectangle(cornerRadius: 40))
+                            }
+                            
+                            Button {
+                                currentNumber = ""
+                                previousanswer = ""
+                                operation = ""
+                                answer = ""
+                            } label: {
+                                Text("CLEAR")
+                                    .font(.system(size: 32, weight: .semibold))
+                                    .frame(width: 150, height: 50)
+                                    .background(
+                                        LinearGradient(
+                                            gradient: Gradient(colors: [Color.red.opacity(0.7), Color.orange]),
+                                            startPoint: .topLeading,
+                                            endPoint: .bottomTrailing
+                                        )
+                                    )
+                                    .foregroundColor(.white)
+                                    .clipShape(RoundedRectangle(cornerRadius: 40, ))
+                                    .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
+                            }
+                            //
+                            
+                        }//Hstackcalulator
+                        .padding(0)
+                        
+                        ScrollView {
+                            VStack(alignment: .leading, spacing: 4) {
+                                ForEach(history, id: \.self) { ans in
+                                    Text(ans)
+                                        .padding(.vertical, 2)
+                                        .frame(width: 80, height: 80)
+                                        .background(Color.gray.opacity(0.2))
+                                        .cornerRadius(8)
+                                        .padding(.horizontal)
+                                        .font(.system(size: 32, weight: .semibold))
+                                        .foregroundStyle(.white)
+                                    
+                                }
                             }
                         }
-                    }
-                    NavigationStack{
-                        NavigationLink("Do Squares And Square Roots ->") {
-                            SquaresAndRoots()
+                        NavigationStack{
+                            NavigationLink("Do Squares And Square Roots ->") {
+                                SquaresAndRoots()
+                            }
+                            .padding(2)
+                            .font(.system(size: 22, weight: .semibold))
+                            NavigationLink("Do trigonometry ->") {
+                                TrigonometryView()
+                                    .font(.system(size: 26, weight: .semibold))
+                                //                            NavigationLink("See Previous Answers ->") {
+                                //                                PrevAnswersView()
+                                //                            }
+                            }
                         }
-                        .padding(2)
                         .font(.system(size: 22, weight: .semibold))
-                        NavigationLink("Do trigonometry ->") {
-                            TrigonometryView()
-                                .font(.system(size: 26, weight: .semibold))
-//                            NavigationLink("See Previous Answers ->") {
-//                                PrevAnswersView()
-//                            }
-                        }
+                        
                     }
-                    .font(.system(size: 22, weight: .semibold))
-                    
-                }
-            }//Vw
+                }//Vw
+            }
         }
     }
-}
     
 
 #Preview {
