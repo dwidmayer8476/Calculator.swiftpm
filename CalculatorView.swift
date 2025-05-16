@@ -476,7 +476,7 @@ struct CalculatorView: View {
                         .font(.system(size: 22, weight: .semibold))
                         NavigationLink("Do trigonometry ->") {
                             TrigonometryView()
-                            
+                                .font(.system(size: 26, weight: .semibold))
 //                            NavigationLink("See Previous Answers ->") {
 //                                PrevAnswersView()
 //                            }
