@@ -28,8 +28,8 @@ struct SquaresAndRoots: View {
                     
                     HStack(spacing: 20) {
                         Button(action: calculateSquare) {
-                            Text("Square")
-                                .font(.system(size: 32, weight: .semibold))
+                            Text("Square (X^2)")
+                                .font(.system(size: 28, weight: .semibold))
                                 .frame(width: 150, height: 70)
                                 .background(
                                     LinearGradient(
@@ -43,8 +43,8 @@ struct SquaresAndRoots: View {
                         }
                         
                         Button(action: calculateSquareRoot) {
-                            Text("Square Root")
-                                .font(.system(size: 32, weight: .semibold))
+                            Text("Square Root( √x)")
+                                .font(.system(size: 28, weight: .semibold))
                                 .frame(width: 200, height: 70)
                                 .background(
                                     LinearGradient(

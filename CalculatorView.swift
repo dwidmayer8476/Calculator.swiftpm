@@ -469,13 +469,13 @@ struct CalculatorView: View {
                         .font(.system(size: 26, weight: .semibold))
                         NavigationLink("Do trigonometry ->") {
                             TrigonometryView()
-                                .font(.system(size: 26, weight: .semibold))
+                            
 //                            NavigationLink("See Previous Answers ->") {
 //                                PrevAnswersView()
 //                            }
                         }
                     }
-                    .font(.system(size: 32, weight: .semibold))
+                    .font(.system(size: 26, weight: .semibold))
                     
                 }
             }//Vw
