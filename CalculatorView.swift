@@ -22,7 +22,7 @@ struct CalculatorView: View {
                     
                     Text(answer.isEmpty ? "0" : answer)
                         .font(.system(size: 28, weight: .bold, design: .rounded))
-                        .padding()
+                        .padding(20)
                         .background(
                             LinearGradient(
                                 gradient: Gradient(colors: [Color.purple, Color.blue]),
@@ -42,7 +42,7 @@ struct CalculatorView: View {
                         } label: {
                             Text("1")
                                 .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 60, height: 80)
+                                .frame(width: 60, height: 60)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.pink]),
@@ -60,7 +60,7 @@ struct CalculatorView: View {
                         } label: {
                             Text("2")
                                 .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 60, height: 80)
+                                .frame(width: 60, height: 60)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.pink]),
@@ -78,7 +78,7 @@ struct CalculatorView: View {
                         } label: {
                             Text("3")
                                 .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 60, height: 80)
+                                .frame(width: 60, height: 60)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.pink]),
@@ -92,6 +92,7 @@ struct CalculatorView: View {
                         }
                         
                     }
+                    .padding(10)
                     HStack {
                         Button {
                             currentNumber += "4"
@@ -99,7 +100,7 @@ struct CalculatorView: View {
                         } label: {
                             Text("4")
                                 .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 60, height: 80)
+                                .frame(width: 60, height: 60)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.pink]),
@@ -117,7 +118,7 @@ struct CalculatorView: View {
                         } label: {
                             Text("5")
                                 .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 60, height: 80)
+                                .frame(width: 60, height: 60)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.pink]),
@@ -135,7 +136,7 @@ struct CalculatorView: View {
                         } label: {
                             Text("6")
                                 .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 60, height: 80)
+                                .frame(width: 60, height: 60)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.pink]),
@@ -148,6 +149,7 @@ struct CalculatorView: View {
                                 .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                         }
                     }
+                    .padding(10)
                     HStack {
                         Button {
                             currentNumber += "7"
@@ -155,7 +157,7 @@ struct CalculatorView: View {
                         } label: {
                             Text("7")
                                 .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 60, height: 80)
+                                .frame(width: 60, height: 60)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.pink]),
@@ -173,7 +175,7 @@ struct CalculatorView: View {
                         } label: {
                             Text("8")
                                 .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 60, height: 80)
+                                .frame(width: 60, height: 60)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.pink]),
@@ -191,7 +193,7 @@ struct CalculatorView: View {
                         } label: {
                             Text("9")
                                 .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 60, height: 80)
+                                .frame(width: 60, height: 60)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.pink]),
@@ -204,6 +206,7 @@ struct CalculatorView: View {
                                 .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                         }
                     }
+                    .padding(10)
                     HStack{
                         Button {
                             currentNumber += "0"
@@ -211,7 +214,7 @@ struct CalculatorView: View {
                         } label: {
                             Text("0")
                                 .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 60, height: 80)
+                                .frame(width: 60, height: 60)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.purple.opacity(0.7), Color.cyan]),
@@ -233,7 +236,7 @@ struct CalculatorView: View {
                             Text(".")
                             
                                 .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 60, height: 80)
+                                .frame(width: 60, height: 60)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.purple.opacity(0.7), Color.cyan]),
@@ -255,7 +258,7 @@ struct CalculatorView: View {
                         } label: {
                             Text("+")
                                 .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 60, height: 80)
+                                .frame(width: 60, height: 60)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.purple.opacity(0.7), Color.cyan]),
@@ -276,7 +279,7 @@ struct CalculatorView: View {
                         } label: {
                             Text("-")
                                 .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 60, height: 80)
+                                .frame(width: 60, height: 60)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.purple.opacity(0.7), Color.cyan]),
@@ -293,6 +296,7 @@ struct CalculatorView: View {
                         
                         
                     }
+                    .padding(5)
                     
                     //Hstackcalculatorbuttons
                     HStack {
@@ -306,7 +310,7 @@ struct CalculatorView: View {
                         } label: {
                             Text("√x")
                                 .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 60, height: 80)
+                                .frame(width: 60, height: 60)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.purple.opacity(0.7), Color.cyan]),
@@ -327,7 +331,7 @@ struct CalculatorView: View {
                         } label: {
                             Text("x^2")
                                 .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 60, height: 80)
+                                .frame(width: 60, height: 60)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.purple.opacity(0.7), Color.cyan]),
@@ -348,7 +352,7 @@ struct CalculatorView: View {
                         } label: {
                             Text("x")
                                 .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 60, height: 80)
+                                .frame(width: 60, height: 60)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.purple.opacity(0.7), Color.cyan]),
@@ -369,7 +373,7 @@ struct CalculatorView: View {
                         } label: {
                             Text("/")
                                 .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 60, height: 80)
+                                .frame(width: 60, height: 60)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.purple.opacity(0.7), Color.cyan]),
@@ -382,6 +386,7 @@ struct CalculatorView: View {
                                 .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                         }
                     }
+                    .padding(5)
                     HStack {
                         Button {
                             if let previousnumber =
@@ -411,7 +416,7 @@ struct CalculatorView: View {
                         label: {
                             Text("Calculate")
                                 .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 150, height: 70)
+                                .frame(width: 150, height: 50)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.green.opacity(0.7), Color.blue]),
@@ -431,7 +436,7 @@ struct CalculatorView: View {
                         } label: {
                             Text("CLEAR")
                                 .font(.system(size: 32, weight: .semibold))
-                                .frame(width: 150, height: 70)
+                                .frame(width: 150, height: 50)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.red.opacity(0.7), Color.orange]),
@@ -446,13 +451,14 @@ struct CalculatorView: View {
                         //
                         
                     }//Hstackcalulator
+                    .padding(0)
                     
                     ScrollView {
                         VStack(alignment: .leading, spacing: 4) {
                             ForEach(history, id: \.self) { ans in
                                 Text(ans)
                                     .padding(.vertical, 2)
-                                    .frame(width: 100, height: 100)
+                                    .frame(width: 80, height: 80)
                                     .background(Color.gray.opacity(0.2))
                                     .cornerRadius(8)
                                     .padding(.horizontal)
@@ -466,7 +472,8 @@ struct CalculatorView: View {
                         NavigationLink("Do Squares And Square Roots ->") {
                             SquaresAndRoots()
                         }
-                        .font(.system(size: 27, weight: .semibold))
+                        .padding(2)
+                        .font(.system(size: 22, weight: .semibold))
                         NavigationLink("Do trigonometry ->") {
                             TrigonometryView()
                             
@@ -475,7 +482,7 @@ struct CalculatorView: View {
 //                            }
                         }
                     }
-                    .font(.system(size: 32, weight: .semibold))
+                    .font(.system(size: 22, weight: .semibold))
                     
                 }
             }//Vw
