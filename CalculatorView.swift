@@ -400,9 +400,9 @@ struct CalculatorView: View {
                                 }else if operation == "*" {
                                     answer = String(previousnumber * currentnumber)
                                 }else if operation == "squared"{
-                                    answer = String(currentnumber * currentnumber)
+                                    answer = String(previousnumber * previousnumber)
                                     
-                                    //pwer is known by computer means power of which is also like the acos on the trigonometry calc use for squaare root
+                                    //pwer is known by computer means power of which is also like the acos on the trigonometry calc use for square root
                                 }else if operation == "√"{
                                     answer = String(sqrt(previousnumber))
                                 }
@@ -451,10 +451,11 @@ struct CalculatorView: View {
                                     .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                             }
                             //
-                            
+                           
+                        
                         }//Hstackcalulator
                         .padding(0)
-                        
+                    HStack {
                         ScrollView {
                             VStack(alignment: .leading, spacing: 4) {
                                 ForEach(history, id: \.self) { ans in
@@ -470,6 +471,24 @@ struct CalculatorView: View {
                                 }
                             }
                         }
+                        Button {
+                            history = [""]
+                        } label: {
+                            Text("Clear answers")
+                                .font(.system(size: 15, weight: .semibold))
+                                .frame(width: 90, height: 60)
+                                .background(
+                                    LinearGradient(
+                                        gradient: Gradient(colors: [Color.purple.opacity(0.7), Color.cyan]),
+                                        startPoint: .topLeading,
+                                        endPoint: .bottomTrailing
+                                    )
+                                )
+                                .foregroundColor(.white)
+                                .clipShape(Circle())
+                                .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
+                        }
+                    }
                         NavigationStack{
                             NavigationLink("Do Squares And Square Roots ->") {
                                 SquaresAndRoots()
@@ -488,7 +507,8 @@ struct CalculatorView: View {
                         
                     }
                 }//Vw
-            }
+     
+        }
         }
     }
     
@@ -496,3 +516,10 @@ struct CalculatorView: View {
 #Preview {
     CalculatorView()
 }
+
+////LinearGradient(
+//gradient: Gradient(colors: [Color.purple.opacity(0.7), Color.cyan]),
+//startPoint: .topLeading,
+//endPoint: .bottomTrailing
+//)
+//)
