@@ -41,10 +41,13 @@ struct trigView: View {
                     Text("used in the form Tan(Angle°) = Adjacent Side / Hypotnuse, or Tan(adjacent / hypotnuse)^-1 to find the angle")
                         .font(.footnote)
                         .foregroundStyle(.white)
+                    Image("TrigTri")
                     NavigationLink("Try it Out") {
                         TrigonometryView()
                     }
-                    .foregroundStyle(.white)
+                    .foregroundStyle(.gray)
+                    .font(.largeTitle)
+                    
                 }
             }
         }
