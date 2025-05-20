@@ -8,7 +8,6 @@ struct CalculatorView: View {
     @State var answer = ""
     @State var previousanswer = ""
     @State var history: [String] = []
-    @State var rotationAngle = 0.0
     var body: some View {
         ZStack {
             LinearGradient(
@@ -414,9 +413,6 @@ struct CalculatorView: View {
                             operation = ""
                             history.insert(answer, at: 0)
                             
-//                            withAnimation(.easeInOut.speed(0.5)) {
-//                                rotationAngle += 90
-//                                }
                             }
                             label: {
                                 Text("Calculate")
@@ -431,6 +427,7 @@ struct CalculatorView: View {
                                     )
                                     .foregroundColor(.white)
                                     .clipShape(RoundedRectangle(cornerRadius: 40))
+                              
                             }
                             
                             Button {
