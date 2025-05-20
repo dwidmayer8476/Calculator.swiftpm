@@ -3,6 +3,7 @@ import SwiftUI
 struct SquaresAndRoots: View {
     @State var EnteredNumber: String = ""
     @State var Answer: String = ""
+    @FocusState var textFieldIsFocused: Bool
     var body: some View {
         ZStack {
             LinearGradient(
@@ -25,6 +26,10 @@ struct SquaresAndRoots: View {
                         .textFieldStyle(RoundedBorderTextFieldStyle())
                         .padding(.horizontal)
                         .font(.system(size: 32, weight: .semibold))
+                        .onSubmit {
+                        textFieldIsFocused = false
+                        }
+                        .textFieldStyle(RoundedBorderTextFieldStyle())
                     
                     HStack(spacing: 20) {
                         Button(action: calculateSquare) {
