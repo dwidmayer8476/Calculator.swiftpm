@@ -22,7 +22,7 @@ struct SquareLearning: View {
                        A square root of a number is a value that, when multiplied by itself, gives the original number. For example, the square root of 9 is 3 because 3 × 3 = 9. Square roots are denoted using the radical symbol (√), so the square root of x is written as √x. Every positive number has two square roots: one positive (called the principal square root) and one negative. For instance, the square roots of 16 are 4 and -4, as both satisfy 4 × 4 = 16 and (-4) × (-4) = 16. However, in most contexts, the term "square root" refers to the non-negative principal square root. Square roots are undefined for negative numbers in the set of real numbers, though they can be expressed as imaginary numbers in the complex number system. Square roots have practical applications in geometry, physics, and many fields involving mathematical computation.
                        """)
                 .font(.footnote)
-                .foregroundStyle(.cyan)
+                .foregroundStyle(.white)
                 
                 Text("What Are Squares?")
                     .foregroundStyle(.cyan)
