@@ -475,8 +475,8 @@ struct CalculatorView: View {
                             history = [""]
                         } label: {
                             Text("Clear answers")
-                                .font(.system(size: 15, weight: .semibold))
-                                .frame(width: 90, height: 60)
+                                .font(.system(size: 20, weight: .semibold))
+                                .frame(width: 150, height: 60)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.purple.opacity(0.7), Color.cyan]),
@@ -485,7 +485,7 @@ struct CalculatorView: View {
                                     )
                                 )
                                 .foregroundColor(.white)
-                                .clipShape(Circle())
+                                .clipShape(RoundedRectangle(cornerRadius: 40))
                                 .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                         }
                     }
