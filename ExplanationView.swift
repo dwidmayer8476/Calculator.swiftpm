@@ -21,6 +21,9 @@ struct ExplanationView: View {
                 NavigationLink("Learn Trigonometry") {
                     trigView()
                 }
+                NavigationLink("Learn pi (π)") {
+                    piLearn()
+                }
                 
                 .padding(50)
                 NavigationLink("Learn Right Triangles") {
