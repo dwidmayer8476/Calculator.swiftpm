@@ -9,24 +9,27 @@
 import SwiftUI
 
 struct TextFieldCalc: View {
-    @State var textFirstNumber = 0
-    @State var textSecondNumber = 0
-    @State var combinedNumbers = 0
+    @State var textFirstNumber:Double = 0
+    @State var textSecondNumber:Double = 0
+    @State var combinedNumbers:Double = 0
     @State var textAnswer = ""
     var body: some View {
         
-            
+        
         VStack{
-           Divider()
+            
             Text("Answer is:\(textAnswer)")
+                .font(.largeTitle)
                 .padding()
-            Text("Directions: Enter in your numbers in to the text below and click the operation you wish to perform. *Whole numbers only*")
-                .font(.footnote)
+            Text("Directions: Enter in your numbers in to the text below and click the operation you wish to perform.   *Make sure to clear after every calculation*.")
+                .font(.title3)
             TextField("Type in first number", value: $textFirstNumber, format: .number)
+                .foregroundColor(.cyan)
                 .textFieldStyle(.roundedBorder)
                 .keyboardType(.numberPad)
             
             TextField("Type in Second number", value: $textSecondNumber, format: .number)
+                .foregroundColor(.cyan)
                 .textFieldStyle(.roundedBorder)
                 .keyboardType(.numberPad)
             Text("Click an operation")
@@ -72,20 +75,58 @@ struct TextFieldCalc: View {
                         .clipShape(RoundedRectangle(cornerRadius: 80))
                 }
             }
-            Button {
-                textAnswer = String(combinedNumbers)
-            } label: {
-                Text("Calculate")
-                    .font(.largeTitle)
-                    .foregroundStyle(.black)
-                    .frame(width: 200, height: 60)
-                    .background(.red)
-                    .clipShape(RoundedRectangle(cornerRadius: 70))
+            HStack {
+                Button {
+                    textAnswer = String(combinedNumbers)
+                } label: {
+                    Text("Calculate")
+                        .font(.system(size: 32, weight: .semibold))
+                        .frame(width: 150, height: 50)
+                        .background(
+                            LinearGradient(
+                                gradient: Gradient(colors: [Color.green.opacity(0.7), Color.blue]),
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+                        .foregroundColor(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 40))
+                    
+                }
+                Button {
+                    textAnswer = ""
+                    combinedNumbers = 0
+                    textFirstNumber = 0
+                    textSecondNumber = 0
+                } label: {
+                    Text("CLEAR")
+                        .font(.system(size: 32, weight: .semibold))
+                        .frame(width: 150, height: 50)
+                        .background(
+                            LinearGradient(
+                                gradient: Gradient(colors: [Color.red.opacity(0.7), Color.orange]),
+                                startPoint: .topLeading,
+                                endPoint: .bottomTrailing
+                            )
+                        )
+                        .foregroundColor(.white)
+                        .clipShape(RoundedRectangle(cornerRadius: 40, ))
+                        .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
+                }
             }
-            Divider()
         }
-        .frame(minWidth: 100, minHeight: 800)
-        .background(.gray)
+        .frame(minWidth: 405, minHeight: 975)
+        .background(
+            LinearGradient(
+                gradient: Gradient(colors: [Color.purple, Color.gray]),
+                startPoint: .topLeading,
+                endPoint: .bottomTrailing
+            )
+        )
+        .foregroundColor(.white)
+        .cornerRadius(40)
+        .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 5)
+        .padding(50)
     }
 }
 
