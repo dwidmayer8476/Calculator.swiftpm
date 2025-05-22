@@ -322,6 +322,8 @@ struct CalculatorView: View {
                                 .clipShape(Circle())
                                 .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                         }
+                        
+                       
                         Button {
                             if !answer.isEmpty {
                                 previousNumber = answer
@@ -476,7 +478,7 @@ struct CalculatorView: View {
                         } label: {
                             Text("Clear answers")
                                 .font(.system(size: 20, weight: .semibold))
-                                .frame(width: 150, height: 60)
+                                .frame(width: 140, height: 60)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.purple.opacity(0.7), Color.cyan]),
