@@ -490,6 +490,9 @@ struct CalculatorView: View {
                         }
                     }
                         NavigationStack{
+                            NavigationLink("Manually enter in numbers ->"){
+                                TextFieldCalc()
+                            }
                             NavigationLink("Do Squares And Square Roots ->") {
                                 SquaresAndRoots()
                             }
