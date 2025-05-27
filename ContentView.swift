@@ -27,7 +27,7 @@ struct ContentView: View {
                     }
                     .font(.system(size: 28, weight: .bold))
                     .padding(20)
-                    .frame(width: 300, height: 70)
+                    .frame(width: 380, height: 70)
                     .background(
                         LinearGradient(
                             gradient: Gradient(colors: [Color.purple, Color.gray]),
@@ -63,7 +63,7 @@ struct ContentView: View {
                     }
                     .font(.system(size: 28, weight: .bold))
                     .padding(20)
-                    .frame(width: 300, height: 70)
+                    .frame(width: 370, height: 70)
                     .background(
                         LinearGradient(
                             gradient: Gradient(colors: [Color.purple, Color.gray]),
