@@ -38,7 +38,7 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .cornerRadius(40)
                     .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 5)
-                    .padding(50)
+                    .padding(30)
                     NavigationLink("Go to Graphing Calculator") {
                         graphingEquationsView()
                     }
@@ -55,7 +55,7 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .cornerRadius(40)
                     .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 5)
-                    .padding(50)
+                    .padding(30)
                     
                     
                     NavigationLink("Go to Explanations") {
@@ -74,7 +74,7 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .cornerRadius(40)
                     .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 5)
-                    .padding(50)
+                    .padding(30)
                     
                     NavigationLink("Percentage Calculator") {
                         PercentageView()
@@ -92,8 +92,26 @@ struct ContentView: View {
                     .foregroundColor(.white)
                     .cornerRadius(40)
                     .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 5)
-                    .padding(50)
+                    .padding(30)
                     
+                    
+                    NavigationLink("Tip Calculator") {
+                        TipCalculator()
+                    }
+                    .font(.system(size: 28, weight: .bold))
+                    .padding(20)
+                    .frame(width: 380, height: 70)
+                    .background(
+                        LinearGradient(
+                            gradient: Gradient(colors: [Color.purple, Color.gray]),
+                            startPoint: .topLeading,
+                            endPoint: .bottomTrailing
+                        )
+                    )
+                    .foregroundColor(.white)
+                    .cornerRadius(40)
+                    .shadow(color: Color.black.opacity(0.2), radius: 10, x: 0, y: 5)
+                    .padding(30)
                 }
             }
         }
