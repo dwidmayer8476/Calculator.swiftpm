@@ -20,7 +20,9 @@ struct ExplanationView: View {
                 
                 NavigationLink("Learn Trigonometry") {
                     trigView()
+                        
                 }
+                .padding(50)
                 NavigationLink("Learn pi (π)") {
                     piLearn()
                 }
