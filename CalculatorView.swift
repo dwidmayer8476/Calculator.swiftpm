@@ -502,7 +502,7 @@ struct CalculatorView: View {
                                 ForEach(history, id: \.self) { ans in
                                     Text(ans)
                                         .padding(.vertical, 2)
-                                        .frame(width: 80, height: 80)
+                                        .frame(width: 140, height: 80)
                                         .background(Color.gray.opacity(0.2))
                                         .cornerRadius(8)
                                         .padding(.horizontal)

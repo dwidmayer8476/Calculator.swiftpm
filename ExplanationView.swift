@@ -22,22 +22,22 @@ struct ExplanationView: View {
                     trigView()
                     
                 }
-                .padding(30)
+                .padding(20)
                 NavigationLink("Learn pi (π)") {
                     piLearn()
                 }
                 
-                .padding(30)
+                .padding(20)
                 NavigationLink("Learn Right Triangles") {
                     rightTrianglesLearningView()
                 }
                 
-                .padding(30)
+                .padding(20)
                 NavigationLink("Learn Graphing") {
                     GraphLearningView()
                 }
                 
-                .padding(30)
+                .padding(20)
                 
                 NavigationLink("Learn Squares And Sqaure Roots") {
                     SquareLearning()
@@ -45,7 +45,12 @@ struct ExplanationView: View {
                 NavigationLink("Learn Percentages(%)") {
                     PercentagesExplanation()
                 }
-                .padding(30)
+                .padding(20)
+               
+                NavigationLink("Learn Area And Volume") {
+                    AreaVolumeL()
+                }
+                .padding(20)
             }
             .font(.system(size: 32, weight: .semibold))
         }
