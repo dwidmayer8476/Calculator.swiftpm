@@ -524,7 +524,7 @@ struct CalculatorView: View {
                                 ForEach(history, id: \.self) { ans in
                                     Text(ans)
                                         .padding(.vertical, 2)
-                                        .frame(width: 140, height: 80)
+                                        .frame(width: 185, height: 80)
                                         .background(Color.gray.opacity(0.2))
                                         .cornerRadius(8)
                                         .padding(.horizontal)
@@ -537,9 +537,9 @@ struct CalculatorView: View {
                         Button {
                             history = [""]
                         } label: {
-                            Text("Clear answers")
+                            Text("Clear \n Answers")
                                 .font(.system(size: 20, weight: .semibold))
-                                .frame(width: 140, height: 60)
+                                .frame(width: 95, height: 60)
                                 .background(
                                     LinearGradient(
                                         gradient: Gradient(colors: [Color.purple.opacity(0.7), Color.cyan]),
