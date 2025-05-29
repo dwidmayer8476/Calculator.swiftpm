@@ -46,7 +46,12 @@ struct AreaVolumeL: View {
                 Text("You use volume when you want to find out how much space is inside a 3D object or container. This is useful when filling containers with liquids, storing materials, or calculating the capacity of tanks and rooms. Volume helps in cooking (measuring ingredients), shipping (container sizes), and engineering tasks involving fluid or air capacity.")
                     .foregroundStyle(.white)
                     .font(.footnote)
-                
+                Image("ATSAV")
+                NavigationStack{
+                    NavigationLink("See formulas") {
+                        Formulas()
+                    }
+                }
             }
         }
     }

@@ -16,7 +16,7 @@ struct ExplanationView: View {
                 NavigationLink("Learn to add, subtract, multiply, and divide") {
                     addSubDivMultView()
                 }
-                
+                //need pic
                 
                 NavigationLink("Learn Trigonometry") {
                     trigView()
@@ -26,7 +26,7 @@ struct ExplanationView: View {
                 NavigationLink("Learn pi (π)") {
                     piLearn()
                 }
-                
+                //need pic
                 .padding(20)
                 NavigationLink("Learn Right Triangles") {
                     rightTrianglesLearningView()
