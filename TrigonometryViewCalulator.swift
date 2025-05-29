@@ -8,6 +8,8 @@ struct TrigonometryView: View {
     @State var selectedMode = "Find Angle"
     @State var modes = ["Find Angle", "Find Side"]
     @State private var history: [String] = []
+    @State var pressed = false
+    @State var pressed2 = false
     var body: some View {
         NavigationView {
             
@@ -53,6 +55,12 @@ struct TrigonometryView: View {
                     }
                     
                     Button("Calculate") {
+                        pressed = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                            pressed = false
+                        }
+                        
+                        
                         calculate()
                     }
                     .font(.system(size: 32, weight: .semibold))
@@ -66,6 +74,9 @@ struct TrigonometryView: View {
                     )
                     .foregroundColor(.white)
                     .clipShape(RoundedRectangle(cornerRadius: 40))
+                    .scaleEffect(pressed ? 1.3 : 1.0)
+                            .animation(.interpolatingSpring(stiffness: 300, damping: 10), value: pressed)
+
                     
                     if !resultText.isEmpty {
                         Text(resultText)
@@ -79,6 +90,13 @@ struct TrigonometryView: View {
                         hypotenuse = ""
                         angle = ""
                         resultText = ""
+                        
+                        pressed2 = true
+                        DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                            pressed2 = false
+                        }
+                        
+                        
                     } label: {
                         Text("RESET")
                             .font(.system(size: 32, weight: .semibold))
@@ -92,6 +110,8 @@ struct TrigonometryView: View {
                             )
                             .foregroundColor(.white)
                             .clipShape(RoundedRectangle(cornerRadius: 40))
+                            .scaleEffect(pressed2 ? 1.3 : 1.0)
+                                    .animation(.interpolatingSpring(stiffness: 300, damping: 10), value: pressed2)
                     }
                     Spacer()
                 }

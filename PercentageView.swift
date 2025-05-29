@@ -10,6 +10,7 @@ struct PercentageView: View {
     @State var base = ""
     @State var percent = ""
     @State var result = ""
+    @State var pressed = false
     var body: some View {
         ZStack {
             LinearGradient(
@@ -44,8 +45,14 @@ struct PercentageView: View {
                     .cornerRadius(12)
                     .shadow(color: .black.opacity(0.1), radius: 4, x: 0, y: 2)
                 
-                Button("Calculate") {
+                Button("Calculate")
+                {
                     calculatePercentage()
+                    
+                    pressed = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        pressed = false
+                    }
                 }
                 .font(.system(size: 32, weight: .semibold))
                 .frame(width: 300, height: 50)
@@ -60,6 +67,11 @@ struct PercentageView: View {
                 .clipShape(RoundedRectangle(cornerRadius: 40, ))
                 .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                 .padding()
+                .scaleEffect(pressed ? 1.3 : 1.0)
+                        .animation(.interpolatingSpring(stiffness: 300, damping: 10), value: pressed)
+                
+                
+                
                 Text("Result: \(result) ")
                     .font(.system(size: 28, weight: .bold, design: .rounded))
                     .padding(20)

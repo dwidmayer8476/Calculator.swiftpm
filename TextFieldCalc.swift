@@ -13,6 +13,8 @@ struct TextFieldCalc: View {
     @State var textSecondNumber:Double = 0
     @State var combinedNumbers:Double = 0
     @State var textAnswer = ""
+    @State var pressed = false
+    @State var pressed2 = false
     var body: some View {
         
         
@@ -78,6 +80,12 @@ struct TextFieldCalc: View {
             HStack {
                 Button {
                     textAnswer = String(combinedNumbers)
+                    
+                    pressed = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        pressed = false
+                    }
+                    
                 } label: {
                     Text("Calculate")
                         .font(.system(size: 32, weight: .semibold))
@@ -91,6 +99,9 @@ struct TextFieldCalc: View {
                         )
                         .foregroundColor(.white)
                         .clipShape(RoundedRectangle(cornerRadius: 40))
+                        .scaleEffect(pressed ? 1.3 : 1.0)
+                                .animation(.interpolatingSpring(stiffness: 300, damping: 10), value: pressed)
+                    
                     
                 }
                 Button {
@@ -98,6 +109,14 @@ struct TextFieldCalc: View {
                     combinedNumbers = 0
                     textFirstNumber = 0
                     textSecondNumber = 0
+                    
+                    
+                    pressed2 = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        pressed2 = false
+                    }
+                    
+                    
                 } label: {
                     Text("CLEAR")
                         .font(.system(size: 32, weight: .semibold))
@@ -112,6 +131,8 @@ struct TextFieldCalc: View {
                         .foregroundColor(.white)
                         .clipShape(RoundedRectangle(cornerRadius: 40, ))
                         .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
+                        .scaleEffect(pressed2 ? 1.3 : 1.0)
+                                .animation(.interpolatingSpring(stiffness: 300, damping: 10), value: pressed2)
                 }
             }
         }

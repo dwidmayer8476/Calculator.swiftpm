@@ -11,6 +11,7 @@ struct TipCalculator: View {
     @State var amount = ""
     @State var tip = ""
     @State var result = ""
+    @State var pressed = false
     
     var body: some View {
        
@@ -56,10 +57,16 @@ struct TipCalculator: View {
             
                 
                 Button("Calculate total amount") {
+                    
+                    pressed = true
+                    DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                        pressed = false
+                    }
+                    
                     calculateTotal()
                 }
                 .font(.system(size: 32, weight: .semibold))
-                .frame(width: 340, height: 70)
+                .frame(width: 370, height: 70)
                 .background(
                     LinearGradient(
                         gradient: Gradient(colors: [Color.blue.opacity(0.7), Color.gray]),
@@ -71,6 +78,11 @@ struct TipCalculator: View {
                 .clipShape(RoundedRectangle(cornerRadius: 40, ))
                 .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
                 .padding()
+                .scaleEffect(pressed ? 1.3 : 1.0)
+                        .animation(.interpolatingSpring(stiffness: 300, damping: 10), value: pressed)
+                
+                
+                
                 Text("Total: \(result) $")
                     .font(.system(size: 28, weight: .bold, design: .rounded))
                     .padding(20)
