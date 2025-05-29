@@ -43,6 +43,7 @@ struct SquareLearning: View {
                 
                 .foregroundStyle(.white)
                 .font(.footnote)
+                Image("SquareRoot")
                 NavigationStack {
                     NavigationLink("Try It Out"){
                         SquaresAndRoots()

@@ -23,7 +23,7 @@ struct PercentagesExplanation: View {
                 Text("Percentages are used everywhere in everyday life to help us understand proportions and compare quantities. For instance, they are used to calculate discounts when shopping, such as 25% off the price of an item. They also show interest rates on loans or savings, how much of a test you got right, or what portion of a population likes a certain product. By using percentages, it’s easier to communicate and understand how parts relate to a whole in a clear and simple way.")
                     .font(.system(size: 16, weight: .semibold))
                     .foregroundStyle(.white)
-                
+                Image("%")
                 NavigationStack {
                     NavigationLink("Try it out"){
                         PercentageView()
