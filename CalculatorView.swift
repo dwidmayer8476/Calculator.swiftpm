@@ -8,6 +8,8 @@ struct CalculatorView: View {
     @State var answer = ""
     @State var previousanswer = ""
     @State var history: [String] = []
+    @State var pressed = false
+    @State var pressed2 = false
     var body: some View {
         ZStack {
             LinearGradient(
@@ -453,6 +455,13 @@ struct CalculatorView: View {
                             currentNumber = ""
                             operation = ""
                             history.insert(answer, at: 0)
+                        
+                            
+                            pressed = true
+                            DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                pressed = false
+                                            
+                                }
                             
                             }
                             label: {
@@ -468,6 +477,9 @@ struct CalculatorView: View {
                                     )
                                     .foregroundColor(.white)
                                     .clipShape(RoundedRectangle(cornerRadius: 40))
+                                
+                                    .scaleEffect(pressed ? 1.3 : 1.0)
+                                            .animation(.interpolatingSpring(stiffness: 300, damping: 10), value: pressed)
                               
                             }
                             
@@ -476,6 +488,14 @@ struct CalculatorView: View {
                                 previousanswer = ""
                                 operation = ""
                                 answer = ""
+                                
+                                pressed2 = true
+                                DispatchQueue.main.asyncAfter(deadline: .now() + 0.1) {
+                                    pressed2 = false
+                                }
+                                
+                                
+                                
                             } label: {
                                 Text("CLEAR")
                                     .font(.system(size: 32, weight: .semibold))
@@ -490,6 +510,8 @@ struct CalculatorView: View {
                                     .foregroundColor(.white)
                                     .clipShape(RoundedRectangle(cornerRadius: 40, ))
                                     .shadow(color: Color.black.opacity(0.2), radius: 5, x: 0, y: 5)
+                                    .scaleEffect(pressed2 ? 1.3 : 1.0)
+                                            .animation(.interpolatingSpring(stiffness: 300, damping: 10), value: pressed2)
                             }
                             //
                            
